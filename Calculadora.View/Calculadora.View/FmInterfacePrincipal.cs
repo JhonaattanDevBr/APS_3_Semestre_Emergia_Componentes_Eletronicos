@@ -1,8 +1,8 @@
 namespace Calculadora.View
 {
-    public partial class Form1 : Form
+    public partial class FmPrincipal : Form
     {
-        public Form1()
+        public FmPrincipal()
         {
             InitializeComponent();
         }
