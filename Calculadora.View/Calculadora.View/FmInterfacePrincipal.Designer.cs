@@ -121,6 +121,8 @@
             TxtQuantidadeCaminhos.Name = "TxtQuantidadeCaminhos";
             TxtQuantidadeCaminhos.Size = new Size(45, 26);
             TxtQuantidadeCaminhos.TabIndex = 3;
+            TxtQuantidadeCaminhos.TextChanged += TxtQuantidadeCaminhos_TextChanged;
+            TxtQuantidadeCaminhos.KeyPress += TxtQuantidadeCaminhos_KeyPress;
             // 
             // LblMsgMax
             // 
@@ -401,6 +403,7 @@
             TxtComponente.Name = "TxtComponente";
             TxtComponente.Size = new Size(220, 26);
             TxtComponente.TabIndex = 41;
+            TxtComponente.KeyPress += TxtComponente_KeyPress;
             // 
             // BtnLimparTudo
             // 
