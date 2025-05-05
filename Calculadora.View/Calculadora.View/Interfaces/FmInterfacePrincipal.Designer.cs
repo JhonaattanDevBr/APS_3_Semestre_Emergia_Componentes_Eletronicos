@@ -119,7 +119,7 @@
             TxtQuantidadeCaminhos.Location = new Point(517, 81);
             TxtQuantidadeCaminhos.MaxLength = 1;
             TxtQuantidadeCaminhos.Name = "TxtQuantidadeCaminhos";
-            TxtQuantidadeCaminhos.Size = new Size(45, 26);
+            TxtQuantidadeCaminhos.Size = new Size(20, 26);
             TxtQuantidadeCaminhos.TabIndex = 3;
             TxtQuantidadeCaminhos.TextChanged += TxtQuantidadeCaminhos_TextChanged;
             TxtQuantidadeCaminhos.KeyPress += TxtQuantidadeCaminhos_KeyPress;
@@ -128,7 +128,7 @@
             // 
             LblMsgMax.AutoSize = true;
             LblMsgMax.Font = new Font("Arial Narrow", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblMsgMax.Location = new Point(568, 81);
+            LblMsgMax.Location = new Point(543, 81);
             LblMsgMax.Name = "LblMsgMax";
             LblMsgMax.Size = new Size(51, 17);
             LblMsgMax.TabIndex = 4;
@@ -151,6 +151,7 @@
             LblCaminho2.Size = new Size(80, 20);
             LblCaminho2.TabIndex = 6;
             LblCaminho2.Text = "Caminho 2:";
+            LblCaminho2.Visible = false;
             // 
             // LblCaminho3
             // 
@@ -160,6 +161,7 @@
             LblCaminho3.Size = new Size(80, 20);
             LblCaminho3.TabIndex = 7;
             LblCaminho3.Text = "Caminho 3:";
+            LblCaminho3.Visible = false;
             // 
             // LblCaminho4
             // 
@@ -169,6 +171,7 @@
             LblCaminho4.Size = new Size(80, 20);
             LblCaminho4.TabIndex = 8;
             LblCaminho4.Text = "Caminho 4:";
+            LblCaminho4.Visible = false;
             // 
             // LblElementoCam1
             // 
@@ -234,6 +237,7 @@
             LblElementoCam2.Size = new Size(76, 20);
             LblElementoCam2.TabIndex = 16;
             LblElementoCam2.Text = "Elemento: ";
+            LblElementoCam2.Visible = false;
             // 
             // CmbElementoCam2
             // 
@@ -243,6 +247,7 @@
             CmbElementoCam2.Name = "CmbElementoCam2";
             CmbElementoCam2.Size = new Size(200, 28);
             CmbElementoCam2.TabIndex = 17;
+            CmbElementoCam2.Visible = false;
             // 
             // LblValorCam2
             // 
@@ -252,6 +257,7 @@
             LblValorCam2.Size = new Size(74, 20);
             LblValorCam2.TabIndex = 18;
             LblValorCam2.Text = "Valor Sej: ";
+            LblValorCam2.Visible = false;
             // 
             // TxtValorCam2
             // 
@@ -261,6 +267,7 @@
             TxtValorCam2.Name = "TxtValorCam2";
             TxtValorCam2.Size = new Size(70, 26);
             TxtValorCam2.TabIndex = 19;
+            TxtValorCam2.Visible = false;
             // 
             // BtnRemoverCam2
             // 
@@ -270,6 +277,7 @@
             BtnRemoverCam2.TabIndex = 20;
             BtnRemoverCam2.Text = "Remover Último Elemento";
             BtnRemoverCam2.UseVisualStyleBackColor = true;
+            BtnRemoverCam2.Visible = false;
             // 
             // BtnAdicionarCam2
             // 
@@ -279,6 +287,7 @@
             BtnAdicionarCam2.TabIndex = 21;
             BtnAdicionarCam2.Text = "Adicionar Elemento";
             BtnAdicionarCam2.UseVisualStyleBackColor = true;
+            BtnAdicionarCam2.Visible = false;
             // 
             // LblElementoCam3
             // 
@@ -288,6 +297,7 @@
             LblElementoCam3.Size = new Size(76, 20);
             LblElementoCam3.TabIndex = 22;
             LblElementoCam3.Text = "Elemento: ";
+            LblElementoCam3.Visible = false;
             // 
             // LblValorCam3
             // 
@@ -297,6 +307,7 @@
             LblValorCam3.Size = new Size(74, 20);
             LblValorCam3.TabIndex = 23;
             LblValorCam3.Text = "Valor Sej: ";
+            LblValorCam3.Visible = false;
             // 
             // CmbElementoCam3
             // 
@@ -306,6 +317,7 @@
             CmbElementoCam3.Name = "CmbElementoCam3";
             CmbElementoCam3.Size = new Size(200, 28);
             CmbElementoCam3.TabIndex = 24;
+            CmbElementoCam3.Visible = false;
             // 
             // TxtValorCam3
             // 
@@ -314,6 +326,7 @@
             TxtValorCam3.Name = "TxtValorCam3";
             TxtValorCam3.Size = new Size(70, 26);
             TxtValorCam3.TabIndex = 25;
+            TxtValorCam3.Visible = false;
             // 
             // BtnRemoverCam3
             // 
@@ -323,6 +336,7 @@
             BtnRemoverCam3.TabIndex = 26;
             BtnRemoverCam3.Text = "Remover Último Elemento";
             BtnRemoverCam3.UseVisualStyleBackColor = true;
+            BtnRemoverCam3.Visible = false;
             // 
             // BtnAdicionarCam3
             // 
@@ -332,6 +346,7 @@
             BtnAdicionarCam3.TabIndex = 27;
             BtnAdicionarCam3.Text = "Adicionar Elemento";
             BtnAdicionarCam3.UseVisualStyleBackColor = true;
+            BtnAdicionarCam3.Visible = false;
             // 
             // LblElementoCam4
             // 
@@ -341,6 +356,7 @@
             LblElementoCam4.Size = new Size(76, 20);
             LblElementoCam4.TabIndex = 28;
             LblElementoCam4.Text = "Elemento: ";
+            LblElementoCam4.Visible = false;
             // 
             // LblValorCam4
             // 
@@ -350,6 +366,7 @@
             LblValorCam4.Size = new Size(74, 20);
             LblValorCam4.TabIndex = 29;
             LblValorCam4.Text = "Valor Sej: ";
+            LblValorCam4.Visible = false;
             // 
             // CmbElementoCam4
             // 
@@ -359,6 +376,7 @@
             CmbElementoCam4.Name = "CmbElementoCam4";
             CmbElementoCam4.Size = new Size(200, 28);
             CmbElementoCam4.TabIndex = 32;
+            CmbElementoCam4.Visible = false;
             // 
             // TxtValorCam4
             // 
@@ -367,6 +385,7 @@
             TxtValorCam4.Name = "TxtValorCam4";
             TxtValorCam4.Size = new Size(70, 26);
             TxtValorCam4.TabIndex = 33;
+            TxtValorCam4.Visible = false;
             // 
             // BtnRemoverCam4
             // 
@@ -376,6 +395,7 @@
             BtnRemoverCam4.TabIndex = 36;
             BtnRemoverCam4.Text = "Remover Último Elemento";
             BtnRemoverCam4.UseVisualStyleBackColor = true;
+            BtnRemoverCam4.Visible = false;
             // 
             // BtnAdicionarCam4
             // 
@@ -385,6 +405,7 @@
             BtnAdicionarCam4.TabIndex = 37;
             BtnAdicionarCam4.Text = "Adicionar Elemento";
             BtnAdicionarCam4.UseVisualStyleBackColor = true;
+            BtnAdicionarCam4.Visible = false;
             // 
             // LblComponente
             // 
@@ -449,6 +470,7 @@
             LblCategoriaCam2.Size = new Size(76, 20);
             LblCategoriaCam2.TabIndex = 46;
             LblCategoriaCam2.Text = "Categoria: ";
+            LblCategoriaCam2.Visible = false;
             // 
             // LblCategoriaCam3
             // 
@@ -458,6 +480,7 @@
             LblCategoriaCam3.Size = new Size(76, 20);
             LblCategoriaCam3.TabIndex = 47;
             LblCategoriaCam3.Text = "Categoria: ";
+            LblCategoriaCam3.Visible = false;
             // 
             // LblCategoriaCam4
             // 
@@ -467,6 +490,7 @@
             LblCategoriaCam4.Size = new Size(76, 20);
             LblCategoriaCam4.TabIndex = 48;
             LblCategoriaCam4.Text = "Categoria: ";
+            LblCategoriaCam4.Visible = false;
             // 
             // CmbCategoriaCam2
             // 
@@ -476,6 +500,7 @@
             CmbCategoriaCam2.Name = "CmbCategoriaCam2";
             CmbCategoriaCam2.Size = new Size(200, 28);
             CmbCategoriaCam2.TabIndex = 49;
+            CmbCategoriaCam2.Visible = false;
             // 
             // CmbCategoriaCam3
             // 
@@ -485,6 +510,7 @@
             CmbCategoriaCam3.Name = "CmbCategoriaCam3";
             CmbCategoriaCam3.Size = new Size(200, 28);
             CmbCategoriaCam3.TabIndex = 50;
+            CmbCategoriaCam3.Visible = false;
             // 
             // CmbCategoriaCam4
             // 
@@ -494,6 +520,7 @@
             CmbCategoriaCam4.Name = "CmbCategoriaCam4";
             CmbCategoriaCam4.Size = new Size(200, 28);
             CmbCategoriaCam4.TabIndex = 51;
+            CmbCategoriaCam4.Visible = false;
             // 
             // BtnAjuda
             // 
