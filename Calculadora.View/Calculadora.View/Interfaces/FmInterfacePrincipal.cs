@@ -188,9 +188,23 @@ namespace Calculadora.View
 
         private void CmbCategoriaCam1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CtlComboBoxCategoria interfaceCtl = new CtlComboBoxCategoria(CmbCategoriaCam1.ValueMember);
+            CtlCategoria ctlCategoria = new CtlCategoria(CmbCategoriaCam1.SelectedItem.ToString());
+            Dictionary<string, double> dicionario = ctlCategoria.DicionarioDeComponentes();
+            CmbElementoCam1.Items.Clear();
+            CmbElementoCam1.DataSource = new BindingSource(dicionario, null); 
+            CmbElementoCam1.DisplayMember = "key";
+            CmbElementoCam1.ValueMember = "value";
+        }
 
+        private void BtnAdicionarCam1_Click(object sender, EventArgs e)
+        {
+           // Preciso popular o DataGrid quando eu clicar no botão
 
+        }
+
+        private void FmPrincipal_Load(object sender, EventArgs e)
+        {
+            CmbCategoriaCam1.SelectedIndex = 0;
         }
     }
 }

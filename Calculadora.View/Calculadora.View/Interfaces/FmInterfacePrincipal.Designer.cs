@@ -103,7 +103,7 @@
             DgvCaminhos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminhos.Location = new Point(12, 47);
             DgvCaminhos.Name = "DgvCaminhos";
-            DgvCaminhos.Size = new Size(333, 160);
+            DgvCaminhos.Size = new Size(333, 111);
             DgvCaminhos.TabIndex = 1;
             // 
             // LblQuantidadeCaminhos
@@ -167,6 +167,7 @@
             // 
             CmbElementoCam1.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbElementoCam1.FormattingEnabled = true;
+            CmbElementoCam1.IntegralHeight = false;
             CmbElementoCam1.Location = new Point(744, 135);
             CmbElementoCam1.Name = "CmbElementoCam1";
             CmbElementoCam1.Size = new Size(200, 28);
@@ -210,6 +211,7 @@
             BtnAdicionarCam1.TabIndex = 15;
             BtnAdicionarCam1.Text = "Adicionar Elemento";
             BtnAdicionarCam1.UseVisualStyleBackColor = true;
+            BtnAdicionarCam1.Click += BtnAdicionarCam1_Click;
             // 
             // LblElementoCam2
             // 
@@ -641,6 +643,7 @@
             Name = "FmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CECE - Calculadora Emergética de Componentes Eletronicos";
+            Load += FmPrincipal_Load;
             BarraMenu.ResumeLayout(false);
             BarraMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgvCaminhos).EndInit();

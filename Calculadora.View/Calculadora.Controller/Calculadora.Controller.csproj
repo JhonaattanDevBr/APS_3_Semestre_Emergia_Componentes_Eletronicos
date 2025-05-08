@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Controles\Enumeracoes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Calculadora.Model\Calculadora.Model.csproj" />
+  </ItemGroup>
+
 </Project>
