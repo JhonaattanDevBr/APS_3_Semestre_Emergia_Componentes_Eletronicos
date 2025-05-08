@@ -1,3 +1,5 @@
+using Calculadora.Controller.Controles;
+
 namespace Calculadora.View
 {
     public partial class FmPrincipal : Form
@@ -184,7 +186,11 @@ namespace Calculadora.View
             BtnAdicionarCam4.Visible = false;
         }
 
-        
+        private void CmbCategoriaCam1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CtlComboBoxCategoria interfaceCtl = new CtlComboBoxCategoria(CmbCategoriaCam1.ValueMember);
 
+
+        }
     }
 }

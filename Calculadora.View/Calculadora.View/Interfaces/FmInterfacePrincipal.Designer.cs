@@ -449,6 +449,7 @@
             CmbCategoriaCam1.Name = "CmbCategoriaCam1";
             CmbCategoriaCam1.Size = new Size(200, 28);
             CmbCategoriaCam1.TabIndex = 45;
+            CmbCategoriaCam1.SelectedIndexChanged += CmbCategoriaCam1_SelectedIndexChanged;
             // 
             // LblCategoriaCam2
             // 
