@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmPrincipal));
             BarraMenu = new MenuStrip();
             aJUDAToolStripMenuItem = new ToolStripMenuItem();
             DgvCaminhos = new DataGridView();
+            Categoria = new DataGridViewTextBoxColumn();
+            Elemento = new DataGridViewTextBoxColumn();
+            Esforço = new DataGridViewTextBoxColumn();
             LblQuantidadeCaminhos = new Label();
             LblCaminho1 = new Label();
             LblCaminho2 = new Label();
@@ -100,11 +104,41 @@
             // 
             // DgvCaminhos
             // 
+            DgvCaminhos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminhos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCaminhos.Columns.AddRange(new DataGridViewColumn[] { Categoria, Elemento, Esforço });
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            DgvCaminhos.DefaultCellStyle = dataGridViewCellStyle1;
             DgvCaminhos.Location = new Point(12, 47);
             DgvCaminhos.Name = "DgvCaminhos";
+            DgvCaminhos.ReadOnly = true;
+            DgvCaminhos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvCaminhos.Size = new Size(333, 111);
             DgvCaminhos.TabIndex = 1;
+            // 
+            // Categoria
+            // 
+            Categoria.HeaderText = "Categoria";
+            Categoria.Name = "Categoria";
+            Categoria.ReadOnly = true;
+            // 
+            // Elemento
+            // 
+            Elemento.HeaderText = "Elemento";
+            Elemento.Name = "Elemento";
+            Elemento.ReadOnly = true;
+            // 
+            // Esforço
+            // 
+            Esforço.HeaderText = "Esforço";
+            Esforço.Name = "Esforço";
+            Esforço.ReadOnly = true;
             // 
             // LblQuantidadeCaminhos
             // 
@@ -641,7 +675,6 @@
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "FmPrincipal";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "CECE - Calculadora Emergética de Componentes Eletronicos";
             Load += FmPrincipal_Load;
             BarraMenu.ResumeLayout(false);
@@ -703,5 +736,8 @@
         private RadioButton RbtDois;
         private RadioButton RbtTres;
         private RadioButton RbtQuatro;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn Elemento;
+        private DataGridViewTextBoxColumn Esforço;
     }
 }

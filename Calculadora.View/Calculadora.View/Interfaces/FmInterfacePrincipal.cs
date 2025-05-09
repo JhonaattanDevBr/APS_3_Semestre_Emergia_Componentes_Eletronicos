@@ -1,4 +1,5 @@
 using Calculadora.Controller.Controles;
+using System.Data;
 
 namespace Calculadora.View
 {
@@ -9,6 +10,11 @@ namespace Calculadora.View
             InitializeComponent();
         }
 
+        // Configurações iniciais do formulario
+        private void FmPrincipal_Load(object sender, EventArgs e)
+        {
+            CmbCategoriaCam1.SelectedIndex = 0;
+        }
 
         // Verificações das entradas nas caixas de texto
         private void TxtComponente_KeyPress(object sender, KeyPressEventArgs e)
@@ -198,13 +204,9 @@ namespace Calculadora.View
 
         private void BtnAdicionarCam1_Click(object sender, EventArgs e)
         {
-           // Preciso popular o DataGrid quando eu clicar no botão
-
+            // Preciso popular o DataGrid quando eu clicar no botão
         }
 
-        private void FmPrincipal_Load(object sender, EventArgs e)
-        {
-            CmbCategoriaCam1.SelectedIndex = 0;
-        }
+        
     }
 }
