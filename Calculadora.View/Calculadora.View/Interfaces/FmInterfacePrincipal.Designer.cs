@@ -30,17 +30,17 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmPrincipal));
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             BarraMenu = new MenuStrip();
             aJUDAToolStripMenuItem = new ToolStripMenuItem();
-            DgvCaminhos = new DataGridView();
-            Categoria = new DataGridViewTextBoxColumn();
-            Elemento = new DataGridViewTextBoxColumn();
-            Esforço = new DataGridViewTextBoxColumn();
-            LblQuantidadeCaminhos = new Label();
+            DgvCaminho1 = new DataGridView();
+            CategoriaCam1 = new DataGridViewTextBoxColumn();
+            ElementoCam1 = new DataGridViewTextBoxColumn();
+            EsforcoCam1 = new DataGridViewTextBoxColumn();
+            LblNumeroCaminhos = new Label();
             LblCaminho1 = new Label();
             LblCaminho2 = new Label();
             LblCaminho3 = new Label();
-            LblCaminho4 = new Label();
             LblElementoCam1 = new Label();
             CmbElementoCam1 = new ComboBox();
             LblEsforcoCam1 = new Label();
@@ -59,12 +59,6 @@
             TxtEsforcoCam3 = new TextBox();
             BtnRemoverCam3 = new Button();
             BtnAdicionarCam3 = new Button();
-            LblElementoCam4 = new Label();
-            LblEsforcoCam4 = new Label();
-            CmbElementoCam4 = new ComboBox();
-            TxtEsforcoCam4 = new TextBox();
-            BtnRemoverCam4 = new Button();
-            BtnAdicionarCam4 = new Button();
             LblComponente = new Label();
             TxtComponente = new TextBox();
             BtnLimparTudo = new Button();
@@ -73,18 +67,28 @@
             CmbCategoriaCam1 = new ComboBox();
             LblCategoriaCam2 = new Label();
             LblCategoriaCam3 = new Label();
-            LblCategoriaCam4 = new Label();
             CmbCategoriaCam2 = new ComboBox();
             CmbCategoriaCam3 = new ComboBox();
-            CmbCategoriaCam4 = new ComboBox();
             BtnAjuda = new Button();
             LblMsgAjuda = new Label();
             RbtUm = new RadioButton();
             RbtDois = new RadioButton();
             RbtTres = new RadioButton();
-            RbtQuatro = new RadioButton();
+            DgvCaminho2 = new DataGridView();
+            CategoriaCam2 = new DataGridViewTextBoxColumn();
+            ElementoCam2 = new DataGridViewTextBoxColumn();
+            EsforcoCam2 = new DataGridViewTextBoxColumn();
+            DgvCaminho3 = new DataGridView();
+            CategoriaCam3 = new DataGridViewTextBoxColumn();
+            ElementoCam3 = new DataGridViewTextBoxColumn();
+            EsforcoCam3 = new DataGridViewTextBoxColumn();
+            LblDgvCam1 = new Label();
+            LblDgvCam2 = new Label();
+            LblDgvCam3 = new Label();
             BarraMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvCaminhos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCaminho1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCaminho2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCaminho3).BeginInit();
             SuspendLayout();
             // 
             // BarraMenu
@@ -102,57 +106,61 @@
             aJUDAToolStripMenuItem.Size = new Size(56, 20);
             aJUDAToolStripMenuItem.Text = "AJUDA";
             // 
-            // DgvCaminhos
+            // DgvCaminho1
             // 
-            DgvCaminhos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvCaminhos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvCaminhos.Columns.AddRange(new DataGridViewColumn[] { Categoria, Elemento, Esforço });
+            DgvCaminho1.AllowUserToAddRows = false;
+            DgvCaminho1.AllowUserToResizeRows = false;
+            DgvCaminho1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCaminho1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCaminho1.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam1, ElementoCam1, EsforcoCam1 });
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            DgvCaminhos.DefaultCellStyle = dataGridViewCellStyle1;
-            DgvCaminhos.Location = new Point(12, 47);
-            DgvCaminhos.Name = "DgvCaminhos";
-            DgvCaminhos.ReadOnly = true;
-            DgvCaminhos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DgvCaminhos.Size = new Size(333, 111);
-            DgvCaminhos.TabIndex = 1;
+            DgvCaminho1.DefaultCellStyle = dataGridViewCellStyle1;
+            DgvCaminho1.Location = new Point(12, 67);
+            DgvCaminho1.MultiSelect = false;
+            DgvCaminho1.Name = "DgvCaminho1";
+            DgvCaminho1.ReadOnly = true;
+            DgvCaminho1.RowHeadersVisible = false;
+            DgvCaminho1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvCaminho1.Size = new Size(333, 111);
+            DgvCaminho1.TabIndex = 1;
             // 
-            // Categoria
+            // CategoriaCam1
             // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.Name = "Categoria";
-            Categoria.ReadOnly = true;
+            CategoriaCam1.HeaderText = "Categoria";
+            CategoriaCam1.Name = "CategoriaCam1";
+            CategoriaCam1.ReadOnly = true;
             // 
-            // Elemento
+            // ElementoCam1
             // 
-            Elemento.HeaderText = "Elemento";
-            Elemento.Name = "Elemento";
-            Elemento.ReadOnly = true;
+            ElementoCam1.HeaderText = "Elemento";
+            ElementoCam1.Name = "ElementoCam1";
+            ElementoCam1.ReadOnly = true;
             // 
-            // Esforço
+            // EsforcoCam1
             // 
-            Esforço.HeaderText = "Esforço";
-            Esforço.Name = "Esforço";
-            Esforço.ReadOnly = true;
+            EsforcoCam1.HeaderText = "Esforço";
+            EsforcoCam1.Name = "EsforcoCam1";
+            EsforcoCam1.ReadOnly = true;
             // 
-            // LblQuantidadeCaminhos
+            // LblNumeroCaminhos
             // 
-            LblQuantidadeCaminhos.AutoSize = true;
-            LblQuantidadeCaminhos.Location = new Point(351, 85);
-            LblQuantidadeCaminhos.Name = "LblQuantidadeCaminhos";
-            LblQuantidadeCaminhos.Size = new Size(172, 20);
-            LblQuantidadeCaminhos.TabIndex = 2;
-            LblQuantidadeCaminhos.Text = "Quantidade de caminhos: ";
+            LblNumeroCaminhos.AutoSize = true;
+            LblNumeroCaminhos.Location = new Point(757, 38);
+            LblNumeroCaminhos.Name = "LblNumeroCaminhos";
+            LblNumeroCaminhos.Size = new Size(115, 20);
+            LblNumeroCaminhos.TabIndex = 2;
+            LblNumeroCaminhos.Text = "Nº de caminhos: ";
             // 
             // LblCaminho1
             // 
             LblCaminho1.AutoSize = true;
-            LblCaminho1.Location = new Point(351, 118);
+            LblCaminho1.Location = new Point(351, 101);
             LblCaminho1.Name = "LblCaminho1";
             LblCaminho1.Size = new Size(80, 20);
             LblCaminho1.TabIndex = 5;
@@ -161,7 +169,7 @@
             // LblCaminho2
             // 
             LblCaminho2.AutoSize = true;
-            LblCaminho2.Location = new Point(351, 221);
+            LblCaminho2.Location = new Point(351, 267);
             LblCaminho2.Name = "LblCaminho2";
             LblCaminho2.Size = new Size(80, 20);
             LblCaminho2.TabIndex = 6;
@@ -171,27 +179,17 @@
             // LblCaminho3
             // 
             LblCaminho3.AutoSize = true;
-            LblCaminho3.Location = new Point(351, 329);
+            LblCaminho3.Location = new Point(351, 436);
             LblCaminho3.Name = "LblCaminho3";
             LblCaminho3.Size = new Size(80, 20);
             LblCaminho3.TabIndex = 7;
             LblCaminho3.Text = "Caminho 3:";
             LblCaminho3.Visible = false;
             // 
-            // LblCaminho4
-            // 
-            LblCaminho4.AutoSize = true;
-            LblCaminho4.Location = new Point(351, 434);
-            LblCaminho4.Name = "LblCaminho4";
-            LblCaminho4.Size = new Size(80, 20);
-            LblCaminho4.TabIndex = 8;
-            LblCaminho4.Text = "Caminho 4:";
-            LblCaminho4.Visible = false;
-            // 
             // LblElementoCam1
             // 
             LblElementoCam1.AutoSize = true;
-            LblElementoCam1.Location = new Point(666, 138);
+            LblElementoCam1.Location = new Point(666, 121);
             LblElementoCam1.Name = "LblElementoCam1";
             LblElementoCam1.Size = new Size(72, 20);
             LblElementoCam1.TabIndex = 10;
@@ -202,15 +200,15 @@
             CmbElementoCam1.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbElementoCam1.FormattingEnabled = true;
             CmbElementoCam1.IntegralHeight = false;
-            CmbElementoCam1.Location = new Point(744, 135);
+            CmbElementoCam1.Location = new Point(744, 118);
             CmbElementoCam1.Name = "CmbElementoCam1";
-            CmbElementoCam1.Size = new Size(200, 28);
+            CmbElementoCam1.Size = new Size(358, 28);
             CmbElementoCam1.TabIndex = 11;
             // 
             // LblEsforcoCam1
             // 
             LblEsforcoCam1.AutoSize = true;
-            LblEsforcoCam1.Location = new Point(950, 138);
+            LblEsforcoCam1.Location = new Point(393, 155);
             LblEsforcoCam1.Name = "LblEsforcoCam1";
             LblEsforcoCam1.Size = new Size(65, 20);
             LblEsforcoCam1.TabIndex = 12;
@@ -219,7 +217,7 @@
             // TxtEsforcoCam1
             // 
             TxtEsforcoCam1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtEsforcoCam1.Location = new Point(1021, 135);
+            TxtEsforcoCam1.Location = new Point(460, 152);
             TxtEsforcoCam1.MaxLength = 3;
             TxtEsforcoCam1.Name = "TxtEsforcoCam1";
             TxtEsforcoCam1.Size = new Size(70, 26);
@@ -229,17 +227,18 @@
             // BtnRemoverCam1
             // 
             BtnRemoverCam1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            BtnRemoverCam1.Location = new Point(382, 169);
+            BtnRemoverCam1.Location = new Point(588, 152);
             BtnRemoverCam1.Name = "BtnRemoverCam1";
             BtnRemoverCam1.Size = new Size(180, 30);
             BtnRemoverCam1.TabIndex = 14;
             BtnRemoverCam1.Text = "Remover Último Elemento";
             BtnRemoverCam1.UseVisualStyleBackColor = true;
+            BtnRemoverCam1.Click += BtnRemoverCam1_Click;
             // 
             // BtnAdicionarCam1
             // 
             BtnAdicionarCam1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            BtnAdicionarCam1.Location = new Point(588, 169);
+            BtnAdicionarCam1.Location = new Point(794, 152);
             BtnAdicionarCam1.Name = "BtnAdicionarCam1";
             BtnAdicionarCam1.Size = new Size(150, 30);
             BtnAdicionarCam1.TabIndex = 15;
@@ -250,7 +249,7 @@
             // LblElementoCam2
             // 
             LblElementoCam2.AutoSize = true;
-            LblElementoCam2.Location = new Point(666, 244);
+            LblElementoCam2.Location = new Point(666, 290);
             LblElementoCam2.Name = "LblElementoCam2";
             LblElementoCam2.Size = new Size(76, 20);
             LblElementoCam2.TabIndex = 16;
@@ -261,16 +260,17 @@
             // 
             CmbElementoCam2.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbElementoCam2.FormattingEnabled = true;
-            CmbElementoCam2.Location = new Point(744, 241);
+            CmbElementoCam2.IntegralHeight = false;
+            CmbElementoCam2.Location = new Point(744, 287);
             CmbElementoCam2.Name = "CmbElementoCam2";
-            CmbElementoCam2.Size = new Size(200, 28);
+            CmbElementoCam2.Size = new Size(358, 28);
             CmbElementoCam2.TabIndex = 17;
             CmbElementoCam2.Visible = false;
             // 
             // LblEsforcoCam2
             // 
             LblEsforcoCam2.AutoSize = true;
-            LblEsforcoCam2.Location = new Point(950, 244);
+            LblEsforcoCam2.Location = new Point(393, 322);
             LblEsforcoCam2.Name = "LblEsforcoCam2";
             LblEsforcoCam2.Size = new Size(65, 20);
             LblEsforcoCam2.TabIndex = 18;
@@ -280,7 +280,7 @@
             // TxtEsforcoCam2
             // 
             TxtEsforcoCam2.Font = new Font("Arial Narrow", 12F);
-            TxtEsforcoCam2.Location = new Point(1021, 241);
+            TxtEsforcoCam2.Location = new Point(460, 319);
             TxtEsforcoCam2.MaxLength = 3;
             TxtEsforcoCam2.Name = "TxtEsforcoCam2";
             TxtEsforcoCam2.Size = new Size(70, 26);
@@ -290,28 +290,30 @@
             // 
             // BtnRemoverCam2
             // 
-            BtnRemoverCam2.Location = new Point(382, 273);
+            BtnRemoverCam2.Location = new Point(588, 321);
             BtnRemoverCam2.Name = "BtnRemoverCam2";
             BtnRemoverCam2.Size = new Size(180, 30);
             BtnRemoverCam2.TabIndex = 20;
             BtnRemoverCam2.Text = "Remover Último Elemento";
             BtnRemoverCam2.UseVisualStyleBackColor = true;
             BtnRemoverCam2.Visible = false;
+            BtnRemoverCam2.Click += BtnRemoverCam2_Click;
             // 
             // BtnAdicionarCam2
             // 
-            BtnAdicionarCam2.Location = new Point(588, 273);
+            BtnAdicionarCam2.Location = new Point(794, 321);
             BtnAdicionarCam2.Name = "BtnAdicionarCam2";
             BtnAdicionarCam2.Size = new Size(150, 30);
             BtnAdicionarCam2.TabIndex = 21;
             BtnAdicionarCam2.Text = "Adicionar Elemento";
             BtnAdicionarCam2.UseVisualStyleBackColor = true;
             BtnAdicionarCam2.Visible = false;
+            BtnAdicionarCam2.Click += BtnAdicionarCam2_Click;
             // 
             // LblElementoCam3
             // 
             LblElementoCam3.AutoSize = true;
-            LblElementoCam3.Location = new Point(666, 349);
+            LblElementoCam3.Location = new Point(666, 456);
             LblElementoCam3.Name = "LblElementoCam3";
             LblElementoCam3.Size = new Size(76, 20);
             LblElementoCam3.TabIndex = 22;
@@ -321,7 +323,7 @@
             // LblEsforcoCam3
             // 
             LblEsforcoCam3.AutoSize = true;
-            LblEsforcoCam3.Location = new Point(950, 349);
+            LblEsforcoCam3.Location = new Point(393, 487);
             LblEsforcoCam3.Name = "LblEsforcoCam3";
             LblEsforcoCam3.Size = new Size(65, 20);
             LblEsforcoCam3.TabIndex = 23;
@@ -332,16 +334,17 @@
             // 
             CmbElementoCam3.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbElementoCam3.FormattingEnabled = true;
-            CmbElementoCam3.Location = new Point(744, 346);
+            CmbElementoCam3.IntegralHeight = false;
+            CmbElementoCam3.Location = new Point(744, 453);
             CmbElementoCam3.Name = "CmbElementoCam3";
-            CmbElementoCam3.Size = new Size(200, 28);
+            CmbElementoCam3.Size = new Size(358, 28);
             CmbElementoCam3.TabIndex = 24;
             CmbElementoCam3.Visible = false;
             // 
             // TxtEsforcoCam3
             // 
             TxtEsforcoCam3.Font = new Font("Arial Narrow", 12F);
-            TxtEsforcoCam3.Location = new Point(1021, 349);
+            TxtEsforcoCam3.Location = new Point(460, 487);
             TxtEsforcoCam3.MaxLength = 3;
             TxtEsforcoCam3.Name = "TxtEsforcoCam3";
             TxtEsforcoCam3.Size = new Size(70, 26);
@@ -351,89 +354,30 @@
             // 
             // BtnRemoverCam3
             // 
-            BtnRemoverCam3.Location = new Point(382, 378);
+            BtnRemoverCam3.Location = new Point(588, 487);
             BtnRemoverCam3.Name = "BtnRemoverCam3";
             BtnRemoverCam3.Size = new Size(180, 30);
             BtnRemoverCam3.TabIndex = 26;
             BtnRemoverCam3.Text = "Remover Último Elemento";
             BtnRemoverCam3.UseVisualStyleBackColor = true;
             BtnRemoverCam3.Visible = false;
+            BtnRemoverCam3.Click += BtnRemoverCam3_Click;
             // 
             // BtnAdicionarCam3
             // 
-            BtnAdicionarCam3.Location = new Point(588, 378);
+            BtnAdicionarCam3.Location = new Point(794, 487);
             BtnAdicionarCam3.Name = "BtnAdicionarCam3";
             BtnAdicionarCam3.Size = new Size(150, 30);
             BtnAdicionarCam3.TabIndex = 27;
             BtnAdicionarCam3.Text = "Adicionar Elemento";
             BtnAdicionarCam3.UseVisualStyleBackColor = true;
             BtnAdicionarCam3.Visible = false;
-            // 
-            // LblElementoCam4
-            // 
-            LblElementoCam4.AutoSize = true;
-            LblElementoCam4.Location = new Point(666, 457);
-            LblElementoCam4.Name = "LblElementoCam4";
-            LblElementoCam4.Size = new Size(76, 20);
-            LblElementoCam4.TabIndex = 28;
-            LblElementoCam4.Text = "Elemento: ";
-            LblElementoCam4.Visible = false;
-            // 
-            // LblEsforcoCam4
-            // 
-            LblEsforcoCam4.AutoSize = true;
-            LblEsforcoCam4.Location = new Point(950, 457);
-            LblEsforcoCam4.Name = "LblEsforcoCam4";
-            LblEsforcoCam4.Size = new Size(65, 20);
-            LblEsforcoCam4.TabIndex = 29;
-            LblEsforcoCam4.Text = "Esforço: ";
-            LblEsforcoCam4.Visible = false;
-            // 
-            // CmbElementoCam4
-            // 
-            CmbElementoCam4.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbElementoCam4.FormattingEnabled = true;
-            CmbElementoCam4.Location = new Point(744, 454);
-            CmbElementoCam4.Name = "CmbElementoCam4";
-            CmbElementoCam4.Size = new Size(200, 28);
-            CmbElementoCam4.TabIndex = 32;
-            CmbElementoCam4.Visible = false;
-            // 
-            // TxtEsforcoCam4
-            // 
-            TxtEsforcoCam4.Font = new Font("Arial Narrow", 12F);
-            TxtEsforcoCam4.Location = new Point(1021, 454);
-            TxtEsforcoCam4.MaxLength = 3;
-            TxtEsforcoCam4.Name = "TxtEsforcoCam4";
-            TxtEsforcoCam4.Size = new Size(70, 26);
-            TxtEsforcoCam4.TabIndex = 33;
-            TxtEsforcoCam4.Visible = false;
-            TxtEsforcoCam4.KeyPress += TxtEsforcoCam4_KeyPress;
-            // 
-            // BtnRemoverCam4
-            // 
-            BtnRemoverCam4.Location = new Point(382, 487);
-            BtnRemoverCam4.Name = "BtnRemoverCam4";
-            BtnRemoverCam4.Size = new Size(180, 30);
-            BtnRemoverCam4.TabIndex = 36;
-            BtnRemoverCam4.Text = "Remover Último Elemento";
-            BtnRemoverCam4.UseVisualStyleBackColor = true;
-            BtnRemoverCam4.Visible = false;
-            // 
-            // BtnAdicionarCam4
-            // 
-            BtnAdicionarCam4.Location = new Point(588, 487);
-            BtnAdicionarCam4.Name = "BtnAdicionarCam4";
-            BtnAdicionarCam4.Size = new Size(150, 30);
-            BtnAdicionarCam4.TabIndex = 37;
-            BtnAdicionarCam4.Text = "Adicionar Elemento";
-            BtnAdicionarCam4.UseVisualStyleBackColor = true;
-            BtnAdicionarCam4.Visible = false;
+            BtnAdicionarCam3.Click += BtnAdicionarCam3_Click;
             // 
             // LblComponente
             // 
             LblComponente.AutoSize = true;
-            LblComponente.Location = new Point(351, 47);
+            LblComponente.Location = new Point(351, 38);
             LblComponente.Name = "LblComponente";
             LblComponente.Size = new Size(194, 20);
             LblComponente.TabIndex = 40;
@@ -442,10 +386,10 @@
             // TxtComponente
             // 
             TxtComponente.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtComponente.Location = new Point(551, 41);
+            TxtComponente.Location = new Point(551, 37);
             TxtComponente.MaxLength = 30;
             TxtComponente.Name = "TxtComponente";
-            TxtComponente.Size = new Size(220, 26);
+            TxtComponente.Size = new Size(200, 26);
             TxtComponente.TabIndex = 41;
             TxtComponente.KeyPress += TxtComponente_KeyPress;
             // 
@@ -470,7 +414,7 @@
             // LblCategoriaCam1
             // 
             LblCategoriaCam1.AutoSize = true;
-            LblCategoriaCam1.Location = new Point(382, 138);
+            LblCategoriaCam1.Location = new Point(382, 121);
             LblCategoriaCam1.Name = "LblCategoriaCam1";
             LblCategoriaCam1.Size = new Size(76, 20);
             LblCategoriaCam1.TabIndex = 44;
@@ -481,7 +425,7 @@
             CmbCategoriaCam1.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCategoriaCam1.FormattingEnabled = true;
             CmbCategoriaCam1.Items.AddRange(new object[] { "Componentes", "Materias Primas", "Processos", "Produtos" });
-            CmbCategoriaCam1.Location = new Point(460, 135);
+            CmbCategoriaCam1.Location = new Point(460, 118);
             CmbCategoriaCam1.Name = "CmbCategoriaCam1";
             CmbCategoriaCam1.Size = new Size(200, 28);
             CmbCategoriaCam1.TabIndex = 45;
@@ -490,7 +434,7 @@
             // LblCategoriaCam2
             // 
             LblCategoriaCam2.AutoSize = true;
-            LblCategoriaCam2.Location = new Point(382, 244);
+            LblCategoriaCam2.Location = new Point(382, 290);
             LblCategoriaCam2.Name = "LblCategoriaCam2";
             LblCategoriaCam2.Size = new Size(76, 20);
             LblCategoriaCam2.TabIndex = 46;
@@ -500,52 +444,36 @@
             // LblCategoriaCam3
             // 
             LblCategoriaCam3.AutoSize = true;
-            LblCategoriaCam3.Location = new Point(382, 349);
+            LblCategoriaCam3.Location = new Point(382, 456);
             LblCategoriaCam3.Name = "LblCategoriaCam3";
             LblCategoriaCam3.Size = new Size(76, 20);
             LblCategoriaCam3.TabIndex = 47;
             LblCategoriaCam3.Text = "Categoria: ";
             LblCategoriaCam3.Visible = false;
             // 
-            // LblCategoriaCam4
-            // 
-            LblCategoriaCam4.AutoSize = true;
-            LblCategoriaCam4.Location = new Point(382, 457);
-            LblCategoriaCam4.Name = "LblCategoriaCam4";
-            LblCategoriaCam4.Size = new Size(76, 20);
-            LblCategoriaCam4.TabIndex = 48;
-            LblCategoriaCam4.Text = "Categoria: ";
-            LblCategoriaCam4.Visible = false;
-            // 
             // CmbCategoriaCam2
             // 
             CmbCategoriaCam2.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCategoriaCam2.FormattingEnabled = true;
-            CmbCategoriaCam2.Location = new Point(460, 239);
+            CmbCategoriaCam2.Items.AddRange(new object[] { "Componentes", "Materias Primas", "Processos", "Produtos" });
+            CmbCategoriaCam2.Location = new Point(460, 285);
             CmbCategoriaCam2.Name = "CmbCategoriaCam2";
             CmbCategoriaCam2.Size = new Size(200, 28);
             CmbCategoriaCam2.TabIndex = 49;
             CmbCategoriaCam2.Visible = false;
+            CmbCategoriaCam2.SelectedIndexChanged += CmbCategoriaCam2_SelectedIndexChanged;
             // 
             // CmbCategoriaCam3
             // 
             CmbCategoriaCam3.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCategoriaCam3.FormattingEnabled = true;
-            CmbCategoriaCam3.Location = new Point(460, 346);
+            CmbCategoriaCam3.Items.AddRange(new object[] { "Componentes", "Materias Primas", "Processos", "Produtos" });
+            CmbCategoriaCam3.Location = new Point(460, 453);
             CmbCategoriaCam3.Name = "CmbCategoriaCam3";
             CmbCategoriaCam3.Size = new Size(200, 28);
             CmbCategoriaCam3.TabIndex = 50;
             CmbCategoriaCam3.Visible = false;
-            // 
-            // CmbCategoriaCam4
-            // 
-            CmbCategoriaCam4.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbCategoriaCam4.FormattingEnabled = true;
-            CmbCategoriaCam4.Location = new Point(460, 454);
-            CmbCategoriaCam4.Name = "CmbCategoriaCam4";
-            CmbCategoriaCam4.Size = new Size(200, 28);
-            CmbCategoriaCam4.TabIndex = 51;
-            CmbCategoriaCam4.Visible = false;
+            CmbCategoriaCam3.SelectedIndexChanged += CmbCategoriaCam3_SelectedIndexChanged;
             // 
             // BtnAjuda
             // 
@@ -553,9 +481,9 @@
             BtnAjuda.BackgroundImageLayout = ImageLayout.Stretch;
             BtnAjuda.FlatAppearance.BorderSize = 0;
             BtnAjuda.FlatStyle = FlatStyle.Flat;
-            BtnAjuda.Location = new Point(1027, 38);
+            BtnAjuda.Location = new Point(1058, 38);
             BtnAjuda.Name = "BtnAjuda";
-            BtnAjuda.Size = new Size(75, 60);
+            BtnAjuda.Size = new Size(45, 30);
             BtnAjuda.TabIndex = 52;
             BtnAjuda.UseVisualStyleBackColor = true;
             // 
@@ -563,17 +491,17 @@
             // 
             LblMsgAjuda.AutoSize = true;
             LblMsgAjuda.Font = new Font("Arial Narrow", 10F, FontStyle.Bold);
-            LblMsgAjuda.Location = new Point(854, 41);
+            LblMsgAjuda.Location = new Point(1062, 75);
             LblMsgAjuda.Name = "LblMsgAjuda";
-            LblMsgAjuda.Size = new Size(161, 17);
+            LblMsgAjuda.Size = new Size(40, 17);
             LblMsgAjuda.TabIndex = 53;
-            LblMsgAjuda.Text = "Precisa de ajuda, clique aqui.";
+            LblMsgAjuda.Text = "Ajuda";
             // 
             // RbtUm
             // 
             RbtUm.AutoSize = true;
             RbtUm.Checked = true;
-            RbtUm.Location = new Point(529, 85);
+            RbtUm.Location = new Point(878, 38);
             RbtUm.Name = "RbtUm";
             RbtUm.Size = new Size(34, 24);
             RbtUm.TabIndex = 54;
@@ -585,7 +513,7 @@
             // RbtDois
             // 
             RbtDois.AutoSize = true;
-            RbtDois.Location = new Point(569, 85);
+            RbtDois.Location = new Point(918, 38);
             RbtDois.Name = "RbtDois";
             RbtDois.Size = new Size(34, 24);
             RbtDois.TabIndex = 55;
@@ -596,7 +524,7 @@
             // RbtTres
             // 
             RbtTres.AutoSize = true;
-            RbtTres.Location = new Point(609, 85);
+            RbtTres.Location = new Point(958, 38);
             RbtTres.Name = "RbtTres";
             RbtTres.Size = new Size(34, 24);
             RbtTres.TabIndex = 56;
@@ -604,16 +532,111 @@
             RbtTres.UseVisualStyleBackColor = true;
             RbtTres.CheckedChanged += RbtTres_CheckedChanged;
             // 
-            // RbtQuatro
+            // DgvCaminho2
             // 
-            RbtQuatro.AutoSize = true;
-            RbtQuatro.Location = new Point(649, 85);
-            RbtQuatro.Name = "RbtQuatro";
-            RbtQuatro.Size = new Size(34, 24);
-            RbtQuatro.TabIndex = 57;
-            RbtQuatro.Text = "4";
-            RbtQuatro.UseVisualStyleBackColor = true;
-            RbtQuatro.CheckedChanged += RbtQuatro_CheckedChanged;
+            DgvCaminho2.AllowUserToAddRows = false;
+            DgvCaminho2.AllowUserToResizeRows = false;
+            DgvCaminho2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCaminho2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCaminho2.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam2, ElementoCam2, EsforcoCam2 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DgvCaminho2.DefaultCellStyle = dataGridViewCellStyle2;
+            DgvCaminho2.Location = new Point(12, 234);
+            DgvCaminho2.Name = "DgvCaminho2";
+            DgvCaminho2.ReadOnly = true;
+            DgvCaminho2.RowHeadersVisible = false;
+            DgvCaminho2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvCaminho2.Size = new Size(333, 111);
+            DgvCaminho2.TabIndex = 57;
+            DgvCaminho2.Visible = false;
+            // 
+            // CategoriaCam2
+            // 
+            CategoriaCam2.HeaderText = "Categoria";
+            CategoriaCam2.Name = "CategoriaCam2";
+            CategoriaCam2.ReadOnly = true;
+            // 
+            // ElementoCam2
+            // 
+            ElementoCam2.HeaderText = "Elemento";
+            ElementoCam2.Name = "ElementoCam2";
+            ElementoCam2.ReadOnly = true;
+            // 
+            // EsforcoCam2
+            // 
+            EsforcoCam2.HeaderText = "Esforço";
+            EsforcoCam2.Name = "EsforcoCam2";
+            EsforcoCam2.ReadOnly = true;
+            // 
+            // DgvCaminho3
+            // 
+            DgvCaminho3.AllowUserToAddRows = false;
+            DgvCaminho3.AllowUserToResizeRows = false;
+            DgvCaminho3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCaminho3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCaminho3.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam3, ElementoCam3, EsforcoCam3 });
+            DgvCaminho3.DefaultCellStyle = dataGridViewCellStyle2;
+            DgvCaminho3.Location = new Point(12, 402);
+            DgvCaminho3.Name = "DgvCaminho3";
+            DgvCaminho3.ReadOnly = true;
+            DgvCaminho3.RowHeadersVisible = false;
+            DgvCaminho3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvCaminho3.Size = new Size(333, 111);
+            DgvCaminho3.TabIndex = 58;
+            DgvCaminho3.Visible = false;
+            // 
+            // CategoriaCam3
+            // 
+            CategoriaCam3.HeaderText = "Categoria";
+            CategoriaCam3.Name = "CategoriaCam3";
+            CategoriaCam3.ReadOnly = true;
+            // 
+            // ElementoCam3
+            // 
+            ElementoCam3.HeaderText = "Elemento";
+            ElementoCam3.Name = "ElementoCam3";
+            ElementoCam3.ReadOnly = true;
+            // 
+            // EsforcoCam3
+            // 
+            EsforcoCam3.HeaderText = "Esforço";
+            EsforcoCam3.Name = "EsforcoCam3";
+            EsforcoCam3.ReadOnly = true;
+            // 
+            // LblDgvCam1
+            // 
+            LblDgvCam1.AutoSize = true;
+            LblDgvCam1.Location = new Point(12, 44);
+            LblDgvCam1.Name = "LblDgvCam1";
+            LblDgvCam1.Size = new Size(149, 20);
+            LblDgvCam1.TabIndex = 59;
+            LblDgvCam1.Text = "Etapas do  1º caminho";
+            // 
+            // LblDgvCam2
+            // 
+            LblDgvCam2.AutoSize = true;
+            LblDgvCam2.Location = new Point(12, 211);
+            LblDgvCam2.Name = "LblDgvCam2";
+            LblDgvCam2.Size = new Size(149, 20);
+            LblDgvCam2.TabIndex = 60;
+            LblDgvCam2.Text = "Etapas do  2º caminho";
+            LblDgvCam2.Visible = false;
+            // 
+            // LblDgvCam3
+            // 
+            LblDgvCam3.AutoSize = true;
+            LblDgvCam3.Location = new Point(12, 379);
+            LblDgvCam3.Name = "LblDgvCam3";
+            LblDgvCam3.Size = new Size(149, 20);
+            LblDgvCam3.TabIndex = 61;
+            LblDgvCam3.Text = "Etapas do  3º caminho";
+            LblDgvCam3.Visible = false;
             // 
             // FmPrincipal
             // 
@@ -621,16 +644,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1114, 591);
-            Controls.Add(RbtQuatro);
+            Controls.Add(LblDgvCam3);
+            Controls.Add(LblDgvCam2);
+            Controls.Add(LblDgvCam1);
+            Controls.Add(DgvCaminho3);
+            Controls.Add(DgvCaminho2);
             Controls.Add(RbtTres);
             Controls.Add(RbtDois);
             Controls.Add(RbtUm);
             Controls.Add(LblMsgAjuda);
             Controls.Add(BtnAjuda);
-            Controls.Add(CmbCategoriaCam4);
             Controls.Add(CmbCategoriaCam3);
             Controls.Add(CmbCategoriaCam2);
-            Controls.Add(LblCategoriaCam4);
             Controls.Add(LblCategoriaCam3);
             Controls.Add(LblCategoriaCam2);
             Controls.Add(CmbCategoriaCam1);
@@ -639,12 +664,6 @@
             Controls.Add(BtnLimparTudo);
             Controls.Add(TxtComponente);
             Controls.Add(LblComponente);
-            Controls.Add(BtnAdicionarCam4);
-            Controls.Add(BtnRemoverCam4);
-            Controls.Add(TxtEsforcoCam4);
-            Controls.Add(CmbElementoCam4);
-            Controls.Add(LblEsforcoCam4);
-            Controls.Add(LblElementoCam4);
             Controls.Add(BtnAdicionarCam3);
             Controls.Add(BtnRemoverCam3);
             Controls.Add(TxtEsforcoCam3);
@@ -663,23 +682,25 @@
             Controls.Add(LblEsforcoCam1);
             Controls.Add(CmbElementoCam1);
             Controls.Add(LblElementoCam1);
-            Controls.Add(LblCaminho4);
             Controls.Add(LblCaminho3);
             Controls.Add(LblCaminho2);
             Controls.Add(LblCaminho1);
-            Controls.Add(LblQuantidadeCaminhos);
-            Controls.Add(DgvCaminhos);
+            Controls.Add(LblNumeroCaminhos);
+            Controls.Add(DgvCaminho1);
             Controls.Add(BarraMenu);
             Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MainMenuStrip = BarraMenu;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "FmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CECE - Calculadora Emergética de Componentes Eletronicos";
             Load += FmPrincipal_Load;
             BarraMenu.ResumeLayout(false);
             BarraMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvCaminhos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCaminho1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCaminho2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCaminho3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -688,12 +709,11 @@
 
         private MenuStrip BarraMenu;
         private ToolStripMenuItem aJUDAToolStripMenuItem;
-        private DataGridView DgvCaminhos;
-        private Label LblQuantidadeCaminhos;
+        private DataGridView DgvCaminho1;
+        private Label LblNumeroCaminhos;
         private Label LblCaminho1;
         private Label LblCaminho2;
         private Label LblCaminho3;
-        private Label LblCaminho4;
         private Label LblElementoCam1;
         private ComboBox CmbElementoCam1;
         private Label LblEsforcoCam1;
@@ -712,12 +732,6 @@
         private TextBox TxtEsforcoCam3;
         private Button BtnRemoverCam3;
         private Button BtnAdicionarCam3;
-        private Label LblElementoCam4;
-        private Label LblEsforcoCam4;
-        private ComboBox CmbElementoCam4;
-        private TextBox TxtEsforcoCam4;
-        private Button BtnRemoverCam4;
-        private Button BtnAdicionarCam4;
         private Label LblComponente;
         private TextBox TxtComponente;
         private Button BtnLimparTudo;
@@ -726,18 +740,26 @@
         private ComboBox CmbCategoriaCam1;
         private Label LblCategoriaCam2;
         private Label LblCategoriaCam3;
-        private Label LblCategoriaCam4;
         private ComboBox CmbCategoriaCam2;
         private ComboBox CmbCategoriaCam3;
-        private ComboBox CmbCategoriaCam4;
         private Button BtnAjuda;
         private Label LblMsgAjuda;
         private RadioButton RbtUm;
         private RadioButton RbtDois;
         private RadioButton RbtTres;
-        private RadioButton RbtQuatro;
-        private DataGridViewTextBoxColumn Categoria;
-        private DataGridViewTextBoxColumn Elemento;
-        private DataGridViewTextBoxColumn Esforço;
+        private DataGridView DgvCaminho2;
+        private DataGridView DgvCaminho3;
+        private Label LblDgvCam1;
+        private Label LblDgvCam2;
+        private Label LblDgvCam3;
+        private DataGridViewTextBoxColumn CategoriaCam1;
+        private DataGridViewTextBoxColumn ElementoCam1;
+        private DataGridViewTextBoxColumn EsforcoCam1;
+        private DataGridViewTextBoxColumn CategoriaCam2;
+        private DataGridViewTextBoxColumn ElementoCam2;
+        private DataGridViewTextBoxColumn EsforcoCam2;
+        private DataGridViewTextBoxColumn CategoriaCam3;
+        private DataGridViewTextBoxColumn ElementoCam3;
+        private DataGridViewTextBoxColumn EsforcoCam3;
     }
 }

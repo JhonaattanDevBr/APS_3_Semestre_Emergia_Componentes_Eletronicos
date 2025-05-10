@@ -49,14 +49,6 @@ namespace Calculadora.View
             }
         }
 
-        private void TxtEsforcoCam4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
-            {
-                e.Handled = true;
-            }
-        }
-
 
         // Verificações dos Radio Buttons
         private void RbtUm_CheckedChanged(object sender, EventArgs e)
@@ -83,22 +75,12 @@ namespace Calculadora.View
             }
         }
 
-        private void RbtQuatro_CheckedChanged(object sender, EventArgs e)
-        {
-            if (RbtQuatro.Checked)
-            {
-                this.AtivarCaminhoDois();
-                this.AtivarCaminhoTres();
-                this.AtivarCaminhoQuatro();
-            }
-        }
 
         // Métodos para ativar os componentes visuais
         private void AtivarCaminhoUm()
         {
             this.DesativarCaminhoDois();
             this.DesativarCaminhoTres();
-            this.DesativarCaminhoQuatro();
         }
 
         private void AtivarCaminhoDois()
@@ -113,8 +95,10 @@ namespace Calculadora.View
             TxtEsforcoCam2.Visible = true;
             BtnRemoverCam2.Visible = true;
             BtnAdicionarCam2.Visible = true;
+            LblDgvCam2.Visible = true;
+            DgvCaminho2.Visible = true;
+            CmbCategoriaCam2.SelectedIndex = 0;
             this.DesativarCaminhoTres();
-            this.DesativarCaminhoQuatro();
         }
 
         private void AtivarCaminhoTres()
@@ -130,22 +114,11 @@ namespace Calculadora.View
             TxtEsforcoCam3.Visible = true;
             BtnRemoverCam3.Visible = true;
             BtnAdicionarCam3.Visible = true;
-            this.DesativarCaminhoQuatro();
+            LblDgvCam3.Visible = true;
+            DgvCaminho3.Visible = true;
+            CmbCategoriaCam3.SelectedIndex = 0;
         }
 
-        private void AtivarCaminhoQuatro()
-        {
-            // Liga o caminho 4
-            LblCaminho4.Visible = true;
-            LblCategoriaCam4.Visible = true;
-            CmbCategoriaCam4.Visible = true;
-            LblElementoCam4.Visible = true;
-            CmbElementoCam4.Visible = true;
-            LblEsforcoCam4.Visible = true;
-            TxtEsforcoCam4.Visible = true;
-            BtnRemoverCam4.Visible = true;
-            BtnAdicionarCam4.Visible = true;
-        }
 
         private void DesativarCaminhoDois()
         {
@@ -160,6 +133,9 @@ namespace Calculadora.View
             TxtEsforcoCam2.Visible = false;
             BtnRemoverCam2.Visible = false;
             BtnAdicionarCam2.Visible = false;
+            LblDgvCam2.Visible = false;
+            DgvCaminho2.Visible = false;
+            DgvCaminho2.Rows.Clear();
         }
 
         private void DesativarCaminhoTres()
@@ -175,29 +151,17 @@ namespace Calculadora.View
             TxtEsforcoCam3.Visible = false;
             BtnRemoverCam3.Visible = false;
             BtnAdicionarCam3.Visible = false;
+            LblDgvCam3.Visible = false;
+            DgvCaminho3.Visible = false;
+            DgvCaminho3.Rows.Clear();
         }
 
-        private void DesativarCaminhoQuatro()
-        {
-            // Desliga o Caminho 4
-            TxtEsforcoCam4.Clear();
-            LblCaminho4.Visible = false;
-            LblCategoriaCam4.Visible = false;
-            CmbCategoriaCam4.Visible = false;
-            LblElementoCam4.Visible = false;
-            CmbElementoCam4.Visible = false;
-            LblEsforcoCam4.Visible = false;
-            TxtEsforcoCam4.Visible = false;
-            BtnRemoverCam4.Visible = false;
-            BtnAdicionarCam4.Visible = false;
-        }
 
         private void CmbCategoriaCam1_SelectedIndexChanged(object sender, EventArgs e)
         {
             CtlCategoria ctlCategoria = new CtlCategoria(CmbCategoriaCam1.SelectedItem.ToString());
-            Dictionary<string, double> dicionario = ctlCategoria.DicionarioDeComponentes();
-            CmbElementoCam1.Items.Clear();
-            CmbElementoCam1.DataSource = new BindingSource(dicionario, null); 
+            Dictionary<string, double> dicionario = ctlCategoria.SelecionarConsulta();
+            CmbElementoCam1.DataSource = new BindingSource(dicionario, null);
             CmbElementoCam1.DisplayMember = "key";
             CmbElementoCam1.ValueMember = "value";
         }
@@ -205,8 +169,56 @@ namespace Calculadora.View
         private void BtnAdicionarCam1_Click(object sender, EventArgs e)
         {
             // Preciso popular o DataGrid quando eu clicar no botão
+            DgvCaminho1.Rows.Add(CmbCategoriaCam1.SelectedItem, CmbElementoCam1.SelectedItem.ToString(), TxtEsforcoCam1.Text); // Vou precisar arrumar essa perte pq ele pega os cl=olchetes
+            TxtEsforcoCam1.Clear();
         }
 
-        
+        private void BtnRemoverCam1_Click(object sender, EventArgs e)
+        {
+            if (DgvCaminho1.Rows.Count > 0)
+            {
+                DgvCaminho1.Rows.RemoveAt(DgvCaminho1.Rows.Count - 1);
+            }
+        }
+
+        private void CmbCategoriaCam2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CtlCategoria ctlCategoria = new CtlCategoria(CmbCategoriaCam2.SelectedItem.ToString());
+            Dictionary<string, double> dicionario = ctlCategoria.SelecionarConsulta();
+            CmbElementoCam2.DataSource = new BindingSource(dicionario, null);
+            CmbElementoCam2.DisplayMember = "key";
+            CmbElementoCam2.ValueMember = "value";
+        }
+
+        private void BtnAdicionarCam2_Click(object sender, EventArgs e)
+        {
+            DgvCaminho2.Rows.Add(CmbCategoriaCam2.SelectedItem, CmbElementoCam2.SelectedItem.ToString(), TxtEsforcoCam2.Text); // Vou precisar arrumar essa perte pq ele pega os cl=olchetes
+            TxtEsforcoCam2.Clear();
+        }
+
+        private void BtnRemoverCam2_Click(object sender, EventArgs e)
+        {
+            DgvCaminho2.Rows.RemoveAt(DgvCaminho2.Rows.Count - 1);
+        }
+
+        private void CmbCategoriaCam3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CtlCategoria ctlCategoria = new CtlCategoria(CmbCategoriaCam3.SelectedItem.ToString());
+            Dictionary<string, double> dicionario = ctlCategoria.SelecionarConsulta();
+            CmbElementoCam3.DataSource = new BindingSource(dicionario, null);
+            CmbElementoCam3.DisplayMember = "key";
+            CmbElementoCam3.ValueMember = "value";
+        }
+
+        private void BtnAdicionarCam3_Click(object sender, EventArgs e)
+        {
+            DgvCaminho3.Rows.Add(CmbCategoriaCam2.SelectedItem, CmbElementoCam3.SelectedItem.ToString(), TxtEsforcoCam3.Text); // Vou precisar arrumar essa perte pq ele pega os cl=olchetes
+            TxtEsforcoCam3.Clear();
+        }
+
+        private void BtnRemoverCam3_Click(object sender, EventArgs e)
+        {
+            DgvCaminho3.Rows.RemoveAt(DgvCaminho3.Rows.Count - 1);
+        }
     }
 }

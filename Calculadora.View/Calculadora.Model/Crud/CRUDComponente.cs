@@ -8,17 +8,14 @@ using Microsoft.Data.SqlClient; // Precisa instalar o pacote para funcionar, o S
 
 namespace Calculadora.Model.Crud
 {
-    public class CRUDComponentes : CRUD // Vou utilizar interfaces aqui 
+    public class CRUDComponente : CRUD // Vou utilizar interfaces aqui 
     {
-        private string _nomeTabela;
-        private string _query;
-
-        public CRUDComponentes(string nomeTabela) // Construtor da classe
+        public CRUDComponente(string nomeTabela) // Construtor da classe
         {
-            _nomeTabela = nomeTabela;
+            NomeTabela = nomeTabela;
         }
 
-        public Dictionary<string, double> CriarDicionarioDeComponentes()
+        public override Dictionary<string, double> CriarDicionario()
         {
             try
             {
@@ -28,10 +25,10 @@ namespace Calculadora.Model.Crud
                 {
                     sqlConnection.Open();
 
-                    _query = $"SELECT nome_componente, massa_gramas FROM {_nomeTabela}"; // Criando a query
-                    using (SqlCommand cmd = new SqlCommand(_query, sqlConnection))
+                    Query = $"SELECT nome_componente, massa_gramas FROM {NomeTabela}"; // Criando a query
+                    using (SqlCommand cmd = new SqlCommand(Query, sqlConnection))
                     {
-                        using (SqlDataReader reader = cmd.ExecuteReader()) 
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read()) // Faz a leitura da coluna
                             {
@@ -46,8 +43,7 @@ namespace Calculadora.Model.Crud
             }
             catch (Exception)
             {
-
-                throw;
+                throw; // vou ver o que vou fazer com isso
             }
         }
     }
