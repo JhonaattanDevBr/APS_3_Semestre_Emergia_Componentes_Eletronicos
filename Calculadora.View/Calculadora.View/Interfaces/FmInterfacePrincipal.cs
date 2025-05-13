@@ -25,6 +25,30 @@ namespace Calculadora.View
             }
         }
 
+        private void TxtnomeCam1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtNomeCam2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtNomeCam3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
         private void TxtEsforcoCam1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
@@ -86,6 +110,8 @@ namespace Calculadora.View
         private void AtivarCaminhoDois()
         {
             // Liga o caminho 2
+            TxtNomeCam2.Visible = true;
+            LblNomeCam2.Visible = true;
             LblCaminho2.Visible = true;
             LblCategoriaCam2.Visible = true;
             CmbCategoriaCam2.Visible = true;
@@ -105,6 +131,8 @@ namespace Calculadora.View
         {
             // liga o caminho 3
             this.AtivarCaminhoDois();
+            TxtNomeCam3.Visible = true;
+            LblNomeCam3.Visible = true;
             LblCaminho3.Visible = true;
             LblCategoriaCam3.Visible = true;
             CmbCategoriaCam3.Visible = true;
@@ -124,6 +152,8 @@ namespace Calculadora.View
         {
             // Desliga o Caminho 2
             TxtEsforcoCam2.Clear();
+            TxtNomeCam2.Clear();
+            TxtNomeCam2.Visible = false;
             LblCaminho2.Visible = false;
             LblCategoriaCam2.Visible = false;
             CmbCategoriaCam2.Visible = false;
@@ -142,6 +172,8 @@ namespace Calculadora.View
         {
             // Desliga o Caminho 3
             TxtEsforcoCam3.Clear();
+            TxtNomeCam3.Clear();
+            TxtNomeCam3.Visible = false;
             LblCaminho3.Visible = false;
             LblCategoriaCam3.Visible = false;
             CmbCategoriaCam3.Visible = false;
@@ -219,6 +251,21 @@ namespace Calculadora.View
         private void BtnRemoverCam3_Click(object sender, EventArgs e)
         {
             DgvCaminho3.Rows.RemoveAt(DgvCaminho3.Rows.Count - 1);
+        }
+
+        private void TxtnomeCam1_TextChanged(object sender, EventArgs e)
+        {
+            LblNomeCam1.Text = TxtNomeCam1.Text.ToString();
+        }
+
+        private void TxtNomeCam2_TextChanged(object sender, EventArgs e)
+        {
+            LblNomeCam2.Text = TxtNomeCam2.Text.ToString();
+        }
+
+        private void TxtNomeCam3_TextChanged(object sender, EventArgs e)
+        {
+            LblNomeCam3.Text = TxtNomeCam3.Text.ToString();
         }
     }
 }

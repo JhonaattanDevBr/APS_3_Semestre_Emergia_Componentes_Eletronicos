@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmPrincipal));
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             BarraMenu = new MenuStrip();
             aJUDAToolStripMenuItem = new ToolStripMenuItem();
             DgvCaminho1 = new DataGridView();
@@ -85,6 +86,12 @@
             LblDgvCam1 = new Label();
             LblDgvCam2 = new Label();
             LblDgvCam3 = new Label();
+            TxtNomeCam1 = new TextBox();
+            TxtNomeCam2 = new TextBox();
+            TxtNomeCam3 = new TextBox();
+            LblNomeCam1 = new Label();
+            LblNomeCam2 = new Label();
+            LblNomeCam3 = new Label();
             BarraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvCaminho1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DgvCaminho2).BeginInit();
@@ -160,30 +167,30 @@
             // LblCaminho1
             // 
             LblCaminho1.AutoSize = true;
-            LblCaminho1.Location = new Point(351, 101);
+            LblCaminho1.Location = new Point(351, 85);
             LblCaminho1.Name = "LblCaminho1";
-            LblCaminho1.Size = new Size(80, 20);
+            LblCaminho1.Size = new Size(228, 20);
             LblCaminho1.TabIndex = 5;
-            LblCaminho1.Text = "Caminho 1:";
+            LblCaminho1.Text = "Nome do elemento do 1º caminho: ";
             // 
             // LblCaminho2
             // 
             LblCaminho2.AutoSize = true;
-            LblCaminho2.Location = new Point(351, 267);
+            LblCaminho2.Location = new Point(351, 252);
             LblCaminho2.Name = "LblCaminho2";
-            LblCaminho2.Size = new Size(80, 20);
+            LblCaminho2.Size = new Size(228, 20);
             LblCaminho2.TabIndex = 6;
-            LblCaminho2.Text = "Caminho 2:";
+            LblCaminho2.Text = "Nome do elemento do 2º caminho: ";
             LblCaminho2.Visible = false;
             // 
             // LblCaminho3
             // 
             LblCaminho3.AutoSize = true;
-            LblCaminho3.Location = new Point(351, 436);
+            LblCaminho3.Location = new Point(351, 420);
             LblCaminho3.Name = "LblCaminho3";
-            LblCaminho3.Size = new Size(80, 20);
+            LblCaminho3.Size = new Size(228, 20);
             LblCaminho3.TabIndex = 7;
-            LblCaminho3.Text = "Caminho 3:";
+            LblCaminho3.Text = "Nome do elemento do 3º caminho: ";
             LblCaminho3.Visible = false;
             // 
             // LblElementoCam1
@@ -581,7 +588,14 @@
             DgvCaminho3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminho3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminho3.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam3, ElementoCam3, EsforcoCam3 });
-            DgvCaminho3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DgvCaminho3.DefaultCellStyle = dataGridViewCellStyle3;
             DgvCaminho3.Location = new Point(12, 402);
             DgvCaminho3.Name = "DgvCaminho3";
             DgvCaminho3.ReadOnly = true;
@@ -614,18 +628,18 @@
             LblDgvCam1.AutoSize = true;
             LblDgvCam1.Location = new Point(12, 44);
             LblDgvCam1.Name = "LblDgvCam1";
-            LblDgvCam1.Size = new Size(149, 20);
+            LblDgvCam1.Size = new Size(87, 20);
             LblDgvCam1.TabIndex = 59;
-            LblDgvCam1.Text = "Etapas do  1º caminho";
+            LblDgvCam1.Text = "1º caminho: ";
             // 
             // LblDgvCam2
             // 
             LblDgvCam2.AutoSize = true;
             LblDgvCam2.Location = new Point(12, 211);
             LblDgvCam2.Name = "LblDgvCam2";
-            LblDgvCam2.Size = new Size(149, 20);
+            LblDgvCam2.Size = new Size(87, 20);
             LblDgvCam2.TabIndex = 60;
-            LblDgvCam2.Text = "Etapas do  2º caminho";
+            LblDgvCam2.Text = "2º caminho: ";
             LblDgvCam2.Visible = false;
             // 
             // LblDgvCam3
@@ -633,10 +647,74 @@
             LblDgvCam3.AutoSize = true;
             LblDgvCam3.Location = new Point(12, 379);
             LblDgvCam3.Name = "LblDgvCam3";
-            LblDgvCam3.Size = new Size(149, 20);
+            LblDgvCam3.Size = new Size(87, 20);
             LblDgvCam3.TabIndex = 61;
-            LblDgvCam3.Text = "Etapas do  3º caminho";
+            LblDgvCam3.Text = "3º caminho: ";
             LblDgvCam3.Visible = false;
+            // 
+            // TxtNomeCam1
+            // 
+            TxtNomeCam1.CharacterCasing = CharacterCasing.Lower;
+            TxtNomeCam1.Font = new Font("Arial Narrow", 12F);
+            TxtNomeCam1.Location = new Point(585, 82);
+            TxtNomeCam1.MaxLength = 20;
+            TxtNomeCam1.Name = "TxtNomeCam1";
+            TxtNomeCam1.Size = new Size(250, 26);
+            TxtNomeCam1.TabIndex = 62;
+            TxtNomeCam1.TextChanged += TxtnomeCam1_TextChanged;
+            TxtNomeCam1.KeyPress += TxtnomeCam1_KeyPress;
+            // 
+            // TxtNomeCam2
+            // 
+            TxtNomeCam2.CharacterCasing = CharacterCasing.Lower;
+            TxtNomeCam2.Font = new Font("Arial Narrow", 12F);
+            TxtNomeCam2.Location = new Point(585, 249);
+            TxtNomeCam2.MaxLength = 20;
+            TxtNomeCam2.Name = "TxtNomeCam2";
+            TxtNomeCam2.Size = new Size(250, 26);
+            TxtNomeCam2.TabIndex = 63;
+            TxtNomeCam2.Visible = false;
+            TxtNomeCam2.TextChanged += TxtNomeCam2_TextChanged;
+            TxtNomeCam2.KeyPress += TxtNomeCam2_KeyPress;
+            // 
+            // TxtNomeCam3
+            // 
+            TxtNomeCam3.CharacterCasing = CharacterCasing.Lower;
+            TxtNomeCam3.Font = new Font("Arial Narrow", 12F);
+            TxtNomeCam3.Location = new Point(585, 417);
+            TxtNomeCam3.MaxLength = 20;
+            TxtNomeCam3.Name = "TxtNomeCam3";
+            TxtNomeCam3.Size = new Size(250, 26);
+            TxtNomeCam3.TabIndex = 64;
+            TxtNomeCam3.Visible = false;
+            TxtNomeCam3.TextChanged += TxtNomeCam3_TextChanged;
+            TxtNomeCam3.KeyPress += TxtNomeCam3_KeyPress;
+            // 
+            // LblNomeCam1
+            // 
+            LblNomeCam1.AutoSize = true;
+            LblNomeCam1.Location = new Point(105, 44);
+            LblNomeCam1.Name = "LblNomeCam1";
+            LblNomeCam1.Size = new Size(0, 20);
+            LblNomeCam1.TabIndex = 65;
+            // 
+            // LblNomeCam2
+            // 
+            LblNomeCam2.AutoSize = true;
+            LblNomeCam2.Location = new Point(105, 211);
+            LblNomeCam2.Name = "LblNomeCam2";
+            LblNomeCam2.Size = new Size(0, 20);
+            LblNomeCam2.TabIndex = 66;
+            LblNomeCam2.Visible = false;
+            // 
+            // LblNomeCam3
+            // 
+            LblNomeCam3.AutoSize = true;
+            LblNomeCam3.Location = new Point(105, 379);
+            LblNomeCam3.Name = "LblNomeCam3";
+            LblNomeCam3.Size = new Size(0, 20);
+            LblNomeCam3.TabIndex = 67;
+            LblNomeCam3.Visible = false;
             // 
             // FmPrincipal
             // 
@@ -644,6 +722,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1114, 591);
+            Controls.Add(LblNomeCam3);
+            Controls.Add(LblNomeCam2);
+            Controls.Add(LblNomeCam1);
+            Controls.Add(TxtNomeCam3);
+            Controls.Add(TxtNomeCam2);
+            Controls.Add(TxtNomeCam1);
             Controls.Add(LblDgvCam3);
             Controls.Add(LblDgvCam2);
             Controls.Add(LblDgvCam1);
@@ -761,5 +845,11 @@
         private DataGridViewTextBoxColumn CategoriaCam3;
         private DataGridViewTextBoxColumn ElementoCam3;
         private DataGridViewTextBoxColumn EsforcoCam3;
+        private TextBox TxtNomeCam1;
+        private TextBox TxtNomeCam2;
+        private TextBox TxtNomeCam3;
+        private Label LblNomeCam1;
+        private Label LblNomeCam2;
+        private Label LblNomeCam3;
     }
 }
