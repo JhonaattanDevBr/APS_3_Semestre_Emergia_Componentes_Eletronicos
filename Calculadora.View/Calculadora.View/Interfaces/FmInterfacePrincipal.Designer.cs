@@ -35,9 +35,6 @@
             BarraMenu = new MenuStrip();
             aJUDAToolStripMenuItem = new ToolStripMenuItem();
             DgvCaminho1 = new DataGridView();
-            CategoriaCam1 = new DataGridViewTextBoxColumn();
-            ElementoCam1 = new DataGridViewTextBoxColumn();
-            EsforcoCam1 = new DataGridViewTextBoxColumn();
             LblNumeroCaminhos = new Label();
             LblCaminho1 = new Label();
             LblCaminho2 = new Label();
@@ -76,13 +73,7 @@
             RbtDois = new RadioButton();
             RbtTres = new RadioButton();
             DgvCaminho2 = new DataGridView();
-            CategoriaCam2 = new DataGridViewTextBoxColumn();
-            ElementoCam2 = new DataGridViewTextBoxColumn();
-            EsforcoCam2 = new DataGridViewTextBoxColumn();
             DgvCaminho3 = new DataGridView();
-            CategoriaCam3 = new DataGridViewTextBoxColumn();
-            ElementoCam3 = new DataGridViewTextBoxColumn();
-            EsforcoCam3 = new DataGridViewTextBoxColumn();
             LblDgvCam1 = new Label();
             LblDgvCam2 = new Label();
             LblDgvCam3 = new Label();
@@ -92,6 +83,18 @@
             LblNomeCam1 = new Label();
             LblNomeCam2 = new Label();
             LblNomeCam3 = new Label();
+            CategoriaCam2 = new DataGridViewTextBoxColumn();
+            ElementoCam2 = new DataGridViewTextBoxColumn();
+            UnidadeMedidaCam2 = new DataGridViewTextBoxColumn();
+            EsforcoCam2 = new DataGridViewTextBoxColumn();
+            CategoriaCam1 = new DataGridViewTextBoxColumn();
+            ElementoCam1 = new DataGridViewTextBoxColumn();
+            UnidadeMedidaCam1 = new DataGridViewTextBoxColumn();
+            EsforcoCam1 = new DataGridViewTextBoxColumn();
+            CategoriaCam3 = new DataGridViewTextBoxColumn();
+            ElementoCam3 = new DataGridViewTextBoxColumn();
+            UnidadeMedidaCam3 = new DataGridViewTextBoxColumn();
+            EsforcoCam3 = new DataGridViewTextBoxColumn();
             BarraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvCaminho1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DgvCaminho2).BeginInit();
@@ -119,7 +122,7 @@
             DgvCaminho1.AllowUserToResizeRows = false;
             DgvCaminho1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminho1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvCaminho1.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam1, ElementoCam1, EsforcoCam1 });
+            DgvCaminho1.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam1, ElementoCam1, UnidadeMedidaCam1, EsforcoCam1 });
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -136,24 +139,6 @@
             DgvCaminho1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvCaminho1.Size = new Size(333, 111);
             DgvCaminho1.TabIndex = 1;
-            // 
-            // CategoriaCam1
-            // 
-            CategoriaCam1.HeaderText = "Categoria";
-            CategoriaCam1.Name = "CategoriaCam1";
-            CategoriaCam1.ReadOnly = true;
-            // 
-            // ElementoCam1
-            // 
-            ElementoCam1.HeaderText = "Elemento";
-            ElementoCam1.Name = "ElementoCam1";
-            ElementoCam1.ReadOnly = true;
-            // 
-            // EsforcoCam1
-            // 
-            EsforcoCam1.HeaderText = "Esforço";
-            EsforcoCam1.Name = "EsforcoCam1";
-            EsforcoCam1.ReadOnly = true;
             // 
             // LblNumeroCaminhos
             // 
@@ -417,6 +402,7 @@
             BtnCalculcar.TabIndex = 43;
             BtnCalculcar.Text = "Calcular";
             BtnCalculcar.UseVisualStyleBackColor = true;
+            BtnCalculcar.Click += BtnCalculcar_Click;
             // 
             // LblCategoriaCam1
             // 
@@ -545,7 +531,7 @@
             DgvCaminho2.AllowUserToResizeRows = false;
             DgvCaminho2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminho2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvCaminho2.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam2, ElementoCam2, EsforcoCam2 });
+            DgvCaminho2.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam2, ElementoCam2, UnidadeMedidaCam2, EsforcoCam2 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -563,31 +549,13 @@
             DgvCaminho2.TabIndex = 57;
             DgvCaminho2.Visible = false;
             // 
-            // CategoriaCam2
-            // 
-            CategoriaCam2.HeaderText = "Categoria";
-            CategoriaCam2.Name = "CategoriaCam2";
-            CategoriaCam2.ReadOnly = true;
-            // 
-            // ElementoCam2
-            // 
-            ElementoCam2.HeaderText = "Elemento";
-            ElementoCam2.Name = "ElementoCam2";
-            ElementoCam2.ReadOnly = true;
-            // 
-            // EsforcoCam2
-            // 
-            EsforcoCam2.HeaderText = "Esforço";
-            EsforcoCam2.Name = "EsforcoCam2";
-            EsforcoCam2.ReadOnly = true;
-            // 
             // DgvCaminho3
             // 
             DgvCaminho3.AllowUserToAddRows = false;
             DgvCaminho3.AllowUserToResizeRows = false;
             DgvCaminho3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminho3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvCaminho3.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam3, ElementoCam3, EsforcoCam3 });
+            DgvCaminho3.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam3, ElementoCam3, UnidadeMedidaCam3, EsforcoCam3 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -604,24 +572,6 @@
             DgvCaminho3.Size = new Size(333, 111);
             DgvCaminho3.TabIndex = 58;
             DgvCaminho3.Visible = false;
-            // 
-            // CategoriaCam3
-            // 
-            CategoriaCam3.HeaderText = "Categoria";
-            CategoriaCam3.Name = "CategoriaCam3";
-            CategoriaCam3.ReadOnly = true;
-            // 
-            // ElementoCam3
-            // 
-            ElementoCam3.HeaderText = "Elemento";
-            ElementoCam3.Name = "ElementoCam3";
-            ElementoCam3.ReadOnly = true;
-            // 
-            // EsforcoCam3
-            // 
-            EsforcoCam3.HeaderText = "Esforço";
-            EsforcoCam3.Name = "EsforcoCam3";
-            EsforcoCam3.ReadOnly = true;
             // 
             // LblDgvCam1
             // 
@@ -715,6 +665,78 @@
             LblNomeCam3.Size = new Size(0, 20);
             LblNomeCam3.TabIndex = 67;
             LblNomeCam3.Visible = false;
+            // 
+            // CategoriaCam2
+            // 
+            CategoriaCam2.HeaderText = "Categoria";
+            CategoriaCam2.Name = "CategoriaCam2";
+            CategoriaCam2.ReadOnly = true;
+            // 
+            // ElementoCam2
+            // 
+            ElementoCam2.HeaderText = "Elemento";
+            ElementoCam2.Name = "ElementoCam2";
+            ElementoCam2.ReadOnly = true;
+            // 
+            // UnidadeMedidaCam2
+            // 
+            UnidadeMedidaCam2.HeaderText = "Unidade";
+            UnidadeMedidaCam2.Name = "UnidadeMedidaCam2";
+            UnidadeMedidaCam2.ReadOnly = true;
+            // 
+            // EsforcoCam2
+            // 
+            EsforcoCam2.HeaderText = "Esforço";
+            EsforcoCam2.Name = "EsforcoCam2";
+            EsforcoCam2.ReadOnly = true;
+            // 
+            // CategoriaCam1
+            // 
+            CategoriaCam1.HeaderText = "Categoria";
+            CategoriaCam1.Name = "CategoriaCam1";
+            CategoriaCam1.ReadOnly = true;
+            // 
+            // ElementoCam1
+            // 
+            ElementoCam1.HeaderText = "Elemento";
+            ElementoCam1.Name = "ElementoCam1";
+            ElementoCam1.ReadOnly = true;
+            // 
+            // UnidadeMedidaCam1
+            // 
+            UnidadeMedidaCam1.HeaderText = "Unidade";
+            UnidadeMedidaCam1.Name = "UnidadeMedidaCam1";
+            UnidadeMedidaCam1.ReadOnly = true;
+            // 
+            // EsforcoCam1
+            // 
+            EsforcoCam1.HeaderText = "Esforço";
+            EsforcoCam1.Name = "EsforcoCam1";
+            EsforcoCam1.ReadOnly = true;
+            // 
+            // CategoriaCam3
+            // 
+            CategoriaCam3.HeaderText = "Categoria";
+            CategoriaCam3.Name = "CategoriaCam3";
+            CategoriaCam3.ReadOnly = true;
+            // 
+            // ElementoCam3
+            // 
+            ElementoCam3.HeaderText = "Elemento";
+            ElementoCam3.Name = "ElementoCam3";
+            ElementoCam3.ReadOnly = true;
+            // 
+            // UnidadeMedidaCam3
+            // 
+            UnidadeMedidaCam3.HeaderText = "Unidade";
+            UnidadeMedidaCam3.Name = "UnidadeMedidaCam3";
+            UnidadeMedidaCam3.ReadOnly = true;
+            // 
+            // EsforcoCam3
+            // 
+            EsforcoCam3.HeaderText = "Esforço";
+            EsforcoCam3.Name = "EsforcoCam3";
+            EsforcoCam3.ReadOnly = true;
             // 
             // FmPrincipal
             // 
@@ -836,20 +858,23 @@
         private Label LblDgvCam1;
         private Label LblDgvCam2;
         private Label LblDgvCam3;
-        private DataGridViewTextBoxColumn CategoriaCam1;
-        private DataGridViewTextBoxColumn ElementoCam1;
-        private DataGridViewTextBoxColumn EsforcoCam1;
-        private DataGridViewTextBoxColumn CategoriaCam2;
-        private DataGridViewTextBoxColumn ElementoCam2;
-        private DataGridViewTextBoxColumn EsforcoCam2;
-        private DataGridViewTextBoxColumn CategoriaCam3;
-        private DataGridViewTextBoxColumn ElementoCam3;
-        private DataGridViewTextBoxColumn EsforcoCam3;
         private TextBox TxtNomeCam1;
         private TextBox TxtNomeCam2;
         private TextBox TxtNomeCam3;
         private Label LblNomeCam1;
         private Label LblNomeCam2;
         private Label LblNomeCam3;
+        private DataGridViewTextBoxColumn CategoriaCam2;
+        private DataGridViewTextBoxColumn ElementoCam2;
+        private DataGridViewTextBoxColumn UnidadeMedidaCam2;
+        private DataGridViewTextBoxColumn EsforcoCam2;
+        private DataGridViewTextBoxColumn CategoriaCam1;
+        private DataGridViewTextBoxColumn ElementoCam1;
+        private DataGridViewTextBoxColumn UnidadeMedidaCam1;
+        private DataGridViewTextBoxColumn EsforcoCam1;
+        private DataGridViewTextBoxColumn CategoriaCam3;
+        private DataGridViewTextBoxColumn ElementoCam3;
+        private DataGridViewTextBoxColumn UnidadeMedidaCam3;
+        private DataGridViewTextBoxColumn EsforcoCam3;
     }
 }

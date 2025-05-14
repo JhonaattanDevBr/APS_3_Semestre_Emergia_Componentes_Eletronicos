@@ -16,6 +16,7 @@ namespace Calculadora.View
             CmbCategoriaCam1.SelectedIndex = 0;
         }
 
+
         // Verificações das entradas nas caixas de texto
         private void TxtComponente_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -47,6 +48,21 @@ namespace Calculadora.View
             {
                 e.Handled = true;
             }
+        }
+
+        private void TxtnomeCam1_TextChanged(object sender, EventArgs e)
+        {
+            LblNomeCam1.Text = TxtNomeCam1.Text.ToString();
+        }
+
+        private void TxtNomeCam2_TextChanged(object sender, EventArgs e)
+        {
+            LblNomeCam2.Text = TxtNomeCam2.Text.ToString();
+        }
+
+        private void TxtNomeCam3_TextChanged(object sender, EventArgs e)
+        {
+            LblNomeCam3.Text = TxtNomeCam3.Text.ToString();
         }
 
         private void TxtEsforcoCam1_KeyPress(object sender, KeyPressEventArgs e)
@@ -148,6 +164,7 @@ namespace Calculadora.View
         }
 
 
+        //Métodos para desativas os componentes visuais
         private void DesativarCaminhoDois()
         {
             // Desliga o Caminho 2
@@ -189,6 +206,7 @@ namespace Calculadora.View
         }
 
 
+        // Método do caminho 1: combo box da categoria, botão de incluir e excluir  
         private void CmbCategoriaCam1_SelectedIndexChanged(object sender, EventArgs e)
         {
             CtlCategoria ctlCategoria = new CtlCategoria(CmbCategoriaCam1.SelectedItem.ToString());
@@ -200,8 +218,10 @@ namespace Calculadora.View
 
         private void BtnAdicionarCam1_Click(object sender, EventArgs e)
         {
-            // Preciso popular o DataGrid quando eu clicar no botão
-            DgvCaminho1.Rows.Add(CmbCategoriaCam1.SelectedItem, CmbElementoCam1.SelectedItem.ToString(), TxtEsforcoCam1.Text); // Vou precisar arrumar essa perte pq ele pega os cl=olchetes
+            // preciso verificar se o nome do caminho e o esforço foi preenchido
+            string elemento = new CtlCategoria(CmbElementoCam1.SelectedItem.ToString()).PegarNomeElemento();
+            string unidadeElemento =  new CtlCategoria(CmbElementoCam1.SelectedItem.ToString()).PegarValorElemento();
+            DgvCaminho1.Rows.Add(CmbCategoriaCam1.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam1.Text);
             TxtEsforcoCam1.Clear();
         }
 
@@ -213,6 +233,8 @@ namespace Calculadora.View
             }
         }
 
+
+        // Método do caminho 2: combo box da categoria, botão de incluir e excluir  
         private void CmbCategoriaCam2_SelectedIndexChanged(object sender, EventArgs e)
         {
             CtlCategoria ctlCategoria = new CtlCategoria(CmbCategoriaCam2.SelectedItem.ToString());
@@ -224,7 +246,11 @@ namespace Calculadora.View
 
         private void BtnAdicionarCam2_Click(object sender, EventArgs e)
         {
-            DgvCaminho2.Rows.Add(CmbCategoriaCam2.SelectedItem, CmbElementoCam2.SelectedItem.ToString(), TxtEsforcoCam2.Text); // Vou precisar arrumar essa perte pq ele pega os cl=olchetes
+            // preciso verificar se o nome do caminho e o esforço foi preenchido
+
+            string elemento = new CtlCategoria(CmbElementoCam2.SelectedItem.ToString()).PegarNomeElemento();
+            string unidadeElemento = new CtlCategoria(CmbElementoCam2.SelectedItem.ToString()).PegarValorElemento();
+            DgvCaminho2.Rows.Add(CmbCategoriaCam2.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam2.Text);
             TxtEsforcoCam2.Clear();
         }
 
@@ -233,6 +259,8 @@ namespace Calculadora.View
             DgvCaminho2.Rows.RemoveAt(DgvCaminho2.Rows.Count - 1);
         }
 
+
+        // Método do caminho 3: combo box da categoria, botão de incluir e excluir  
         private void CmbCategoriaCam3_SelectedIndexChanged(object sender, EventArgs e)
         {
             CtlCategoria ctlCategoria = new CtlCategoria(CmbCategoriaCam3.SelectedItem.ToString());
@@ -244,7 +272,11 @@ namespace Calculadora.View
 
         private void BtnAdicionarCam3_Click(object sender, EventArgs e)
         {
-            DgvCaminho3.Rows.Add(CmbCategoriaCam2.SelectedItem, CmbElementoCam3.SelectedItem.ToString(), TxtEsforcoCam3.Text); // Vou precisar arrumar essa perte pq ele pega os cl=olchetes
+            // preciso verificar se o nome do caminho e o esforço foi preenchido
+
+            string elemento = new CtlCategoria(CmbElementoCam3.SelectedItem.ToString()).PegarNomeElemento();
+            string unidadeElemento = new CtlCategoria(CmbElementoCam3.SelectedItem.ToString()).PegarValorElemento();
+            DgvCaminho3.Rows.Add(CmbCategoriaCam2.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam3.Text);
             TxtEsforcoCam3.Clear();
         }
 
@@ -253,19 +285,51 @@ namespace Calculadora.View
             DgvCaminho3.Rows.RemoveAt(DgvCaminho3.Rows.Count - 1);
         }
 
-        private void TxtnomeCam1_TextChanged(object sender, EventArgs e)
+
+        // Metodo para calcular a emergia
+        private void BtnCalculcar_Click(object sender, EventArgs e)
         {
-            LblNomeCam1.Text = TxtNomeCam1.Text.ToString();
+            List<string[]> dadosCaminh01 = new List<string[]>();
+            dadosCaminh01 = this.PegarDadosCaminho(DgvCaminho1);
+
+            if (RbtDois.Checked)
+            {
+                List<string[]> dadosCaminh02 = new List<string[]>();
+                dadosCaminh02 = this.PegarDadosCaminho(DgvCaminho2);
+            }
+            else if (RbtTres.Checked)
+            {
+                List<string[]> dadosCaminh02 = new List<string[]>();
+                dadosCaminh02 = this.PegarDadosCaminho(DgvCaminho2);
+                List<string[]> dadosCaminh03 = new List<string[]>();
+                dadosCaminh03 = this.PegarDadosCaminho(DgvCaminho3);
+            }
+            else
+            {
+
+            }
+            
+
         }
 
-        private void TxtNomeCam2_TextChanged(object sender, EventArgs e)
+        private List<string[]> PegarDadosCaminho(DataGridView dataGridView)
         {
-            LblNomeCam2.Text = TxtNomeCam2.Text.ToString();
-        }
+            List<string[]> dadosCaminho = new List<string[]>();
 
-        private void TxtNomeCam3_TextChanged(object sender, EventArgs e)
-        {
-            LblNomeCam3.Text = TxtNomeCam3.Text.ToString();
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    string[] valores = new string[4];
+                    valores[0] = row.Cells["CategoriaCam1"].Value.ToString();
+                    valores[1] = row.Cells["ElementoCam1"].Value.ToString();
+                    valores[2] = row.Cells["UnidadeMedidaCam1"].Value.ToString();
+                    valores[3] = row.Cells["EsforcoCam1"].Value.ToString();
+
+                    dadosCaminho.Add(valores);
+                }
+            }
+            return dadosCaminho;
         }
     }
 }

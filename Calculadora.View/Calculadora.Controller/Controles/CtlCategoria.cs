@@ -1,5 +1,6 @@
 ﻿using Calculadora.Model.Crud;
 using Calculadora.Controller.Controles.Excessoes;
+using System.Xml.Linq;
 
 namespace Calculadora.Controller.Controles
 {
@@ -68,6 +69,22 @@ namespace Calculadora.Controller.Controles
             CRUDProduto crudProduto = new CRUDProduto(ValorComboBox); // Criando o objeto de controle dos componentes
             Dictionary<string, double> dicionarioDeProdutos = crudProduto.CriarDicionario(); // Chama o método e recebe um dicionario dos componentes
             return dicionarioDeProdutos;
+        }
+
+        public string PegarNomeElemento()
+        {
+            string elemento = ValorComboBox.Substring(1, ValorComboBox.Length - 2);
+            int indexValor = elemento.IndexOf(',');
+           // string valorElemento = elemento.Substring(indexValor + 1);
+           return elemento.Substring(0, indexValor);
+        }
+
+        public string PegarValorElemento()
+        {
+            string elemento = ValorComboBox.Substring(1, ValorComboBox.Length - 2);
+            int indexValor = elemento.IndexOf(',');
+            string valorElemento = elemento.Substring(indexValor + 1);
+            return valorElemento;
         }
     }
 }
