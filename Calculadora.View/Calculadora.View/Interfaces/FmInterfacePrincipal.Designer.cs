@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmPrincipal));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             BarraMenu = new MenuStrip();
-            aJUDAToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            BtnEmergia = new ToolStripMenuItem();
+            ObterAjudaToolStripMenuItem = new ToolStripMenuItem();
+            SairToolStripMenuItem = new ToolStripMenuItem();
             DgvCaminho1 = new DataGridView();
+            CategoriaCam1 = new DataGridViewTextBoxColumn();
+            ElementoCam1 = new DataGridViewTextBoxColumn();
+            UnidadeMedidaCam1 = new DataGridViewTextBoxColumn();
+            EsforcoCam1 = new DataGridViewTextBoxColumn();
             LblNumeroCaminhos = new Label();
             LblCaminho1 = new Label();
             LblCaminho2 = new Label();
@@ -73,7 +80,15 @@
             RbtDois = new RadioButton();
             RbtTres = new RadioButton();
             DgvCaminho2 = new DataGridView();
+            CategoriaCam2 = new DataGridViewTextBoxColumn();
+            ElementoCam2 = new DataGridViewTextBoxColumn();
+            UnidadeMedidaCam2 = new DataGridViewTextBoxColumn();
+            EsforcoCam2 = new DataGridViewTextBoxColumn();
             DgvCaminho3 = new DataGridView();
+            CategoriaCam3 = new DataGridViewTextBoxColumn();
+            ElementoCam3 = new DataGridViewTextBoxColumn();
+            UnidadeMedidaCam3 = new DataGridViewTextBoxColumn();
+            EsforcoCam3 = new DataGridViewTextBoxColumn();
             LblDgvCam1 = new Label();
             LblDgvCam2 = new Label();
             LblDgvCam3 = new Label();
@@ -83,18 +98,6 @@
             LblNomeCam1 = new Label();
             LblNomeCam2 = new Label();
             LblNomeCam3 = new Label();
-            CategoriaCam2 = new DataGridViewTextBoxColumn();
-            ElementoCam2 = new DataGridViewTextBoxColumn();
-            UnidadeMedidaCam2 = new DataGridViewTextBoxColumn();
-            EsforcoCam2 = new DataGridViewTextBoxColumn();
-            CategoriaCam1 = new DataGridViewTextBoxColumn();
-            ElementoCam1 = new DataGridViewTextBoxColumn();
-            UnidadeMedidaCam1 = new DataGridViewTextBoxColumn();
-            EsforcoCam1 = new DataGridViewTextBoxColumn();
-            CategoriaCam3 = new DataGridViewTextBoxColumn();
-            ElementoCam3 = new DataGridViewTextBoxColumn();
-            UnidadeMedidaCam3 = new DataGridViewTextBoxColumn();
-            EsforcoCam3 = new DataGridViewTextBoxColumn();
             BarraMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvCaminho1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DgvCaminho2).BeginInit();
@@ -103,18 +106,38 @@
             // 
             // BarraMenu
             // 
-            BarraMenu.Items.AddRange(new ToolStripItem[] { aJUDAToolStripMenuItem });
+            BarraMenu.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, BtnEmergia, ObterAjudaToolStripMenuItem, SairToolStripMenuItem });
             BarraMenu.Location = new Point(0, 0);
             BarraMenu.Name = "BarraMenu";
             BarraMenu.Size = new Size(1114, 24);
             BarraMenu.TabIndex = 0;
             BarraMenu.Text = "menuStrip1";
             // 
-            // aJUDAToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            aJUDAToolStripMenuItem.Name = "aJUDAToolStripMenuItem";
-            aJUDAToolStripMenuItem.Size = new Size(56, 20);
-            aJUDAToolStripMenuItem.Text = "AJUDA";
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(12, 20);
+            // 
+            // BtnEmergia
+            // 
+            BtnEmergia.Name = "BtnEmergia";
+            BtnEmergia.Size = new Size(156, 20);
+            BtnEmergia.Text = "Entenda o que é emergeia";
+            BtnEmergia.Click += BtnEmergia_Click;
+            // 
+            // ObterAjudaToolStripMenuItem
+            // 
+            ObterAjudaToolStripMenuItem.Name = "ObterAjudaToolStripMenuItem";
+            ObterAjudaToolStripMenuItem.Size = new Size(81, 20);
+            ObterAjudaToolStripMenuItem.Text = "Obter ajuda";
+            ObterAjudaToolStripMenuItem.Click += ObterAjudaToolStripMenuItem_Click;
+            // 
+            // SairToolStripMenuItem
+            // 
+            SairToolStripMenuItem.Name = "SairToolStripMenuItem";
+            SairToolStripMenuItem.Size = new Size(38, 20);
+            SairToolStripMenuItem.Text = "Sair";
+            SairToolStripMenuItem.Click += SairToolStripMenuItem_Click;
             // 
             // DgvCaminho1
             // 
@@ -123,14 +146,14 @@
             DgvCaminho1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminho1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminho1.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam1, ElementoCam1, UnidadeMedidaCam1, EsforcoCam1 });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            DgvCaminho1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            DgvCaminho1.DefaultCellStyle = dataGridViewCellStyle4;
             DgvCaminho1.Location = new Point(12, 67);
             DgvCaminho1.MultiSelect = false;
             DgvCaminho1.Name = "DgvCaminho1";
@@ -139,6 +162,30 @@
             DgvCaminho1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvCaminho1.Size = new Size(333, 111);
             DgvCaminho1.TabIndex = 1;
+            // 
+            // CategoriaCam1
+            // 
+            CategoriaCam1.HeaderText = "Categoria";
+            CategoriaCam1.Name = "CategoriaCam1";
+            CategoriaCam1.ReadOnly = true;
+            // 
+            // ElementoCam1
+            // 
+            ElementoCam1.HeaderText = "Elemento";
+            ElementoCam1.Name = "ElementoCam1";
+            ElementoCam1.ReadOnly = true;
+            // 
+            // UnidadeMedidaCam1
+            // 
+            UnidadeMedidaCam1.HeaderText = "Unidade";
+            UnidadeMedidaCam1.Name = "UnidadeMedidaCam1";
+            UnidadeMedidaCam1.ReadOnly = true;
+            // 
+            // EsforcoCam1
+            // 
+            EsforcoCam1.HeaderText = "Esforço";
+            EsforcoCam1.Name = "EsforcoCam1";
+            EsforcoCam1.ReadOnly = true;
             // 
             // LblNumeroCaminhos
             // 
@@ -393,6 +440,7 @@
             BtnLimparTudo.TabIndex = 42;
             BtnLimparTudo.Text = "Limpar Tudo";
             BtnLimparTudo.UseVisualStyleBackColor = true;
+            BtnLimparTudo.Click += BtnLimparTudo_Click;
             // 
             // BtnCalculcar
             // 
@@ -479,6 +527,7 @@
             BtnAjuda.Size = new Size(45, 30);
             BtnAjuda.TabIndex = 52;
             BtnAjuda.UseVisualStyleBackColor = true;
+            BtnAjuda.Click += BtnAjuda_Click;
             // 
             // LblMsgAjuda
             // 
@@ -532,14 +581,14 @@
             DgvCaminho2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminho2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminho2.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam2, ElementoCam2, UnidadeMedidaCam2, EsforcoCam2 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DgvCaminho2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            DgvCaminho2.DefaultCellStyle = dataGridViewCellStyle5;
             DgvCaminho2.Location = new Point(12, 234);
             DgvCaminho2.Name = "DgvCaminho2";
             DgvCaminho2.ReadOnly = true;
@@ -549,6 +598,30 @@
             DgvCaminho2.TabIndex = 57;
             DgvCaminho2.Visible = false;
             // 
+            // CategoriaCam2
+            // 
+            CategoriaCam2.HeaderText = "Categoria";
+            CategoriaCam2.Name = "CategoriaCam2";
+            CategoriaCam2.ReadOnly = true;
+            // 
+            // ElementoCam2
+            // 
+            ElementoCam2.HeaderText = "Elemento";
+            ElementoCam2.Name = "ElementoCam2";
+            ElementoCam2.ReadOnly = true;
+            // 
+            // UnidadeMedidaCam2
+            // 
+            UnidadeMedidaCam2.HeaderText = "Unidade";
+            UnidadeMedidaCam2.Name = "UnidadeMedidaCam2";
+            UnidadeMedidaCam2.ReadOnly = true;
+            // 
+            // EsforcoCam2
+            // 
+            EsforcoCam2.HeaderText = "Esforço";
+            EsforcoCam2.Name = "EsforcoCam2";
+            EsforcoCam2.ReadOnly = true;
+            // 
             // DgvCaminho3
             // 
             DgvCaminho3.AllowUserToAddRows = false;
@@ -556,14 +629,14 @@
             DgvCaminho3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCaminho3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminho3.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam3, ElementoCam3, UnidadeMedidaCam3, EsforcoCam3 });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DgvCaminho3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DgvCaminho3.DefaultCellStyle = dataGridViewCellStyle6;
             DgvCaminho3.Location = new Point(12, 402);
             DgvCaminho3.Name = "DgvCaminho3";
             DgvCaminho3.ReadOnly = true;
@@ -572,6 +645,30 @@
             DgvCaminho3.Size = new Size(333, 111);
             DgvCaminho3.TabIndex = 58;
             DgvCaminho3.Visible = false;
+            // 
+            // CategoriaCam3
+            // 
+            CategoriaCam3.HeaderText = "Categoria";
+            CategoriaCam3.Name = "CategoriaCam3";
+            CategoriaCam3.ReadOnly = true;
+            // 
+            // ElementoCam3
+            // 
+            ElementoCam3.HeaderText = "Elemento";
+            ElementoCam3.Name = "ElementoCam3";
+            ElementoCam3.ReadOnly = true;
+            // 
+            // UnidadeMedidaCam3
+            // 
+            UnidadeMedidaCam3.HeaderText = "Unidade";
+            UnidadeMedidaCam3.Name = "UnidadeMedidaCam3";
+            UnidadeMedidaCam3.ReadOnly = true;
+            // 
+            // EsforcoCam3
+            // 
+            EsforcoCam3.HeaderText = "Esforço";
+            EsforcoCam3.Name = "EsforcoCam3";
+            EsforcoCam3.ReadOnly = true;
             // 
             // LblDgvCam1
             // 
@@ -666,78 +763,6 @@
             LblNomeCam3.TabIndex = 67;
             LblNomeCam3.Visible = false;
             // 
-            // CategoriaCam2
-            // 
-            CategoriaCam2.HeaderText = "Categoria";
-            CategoriaCam2.Name = "CategoriaCam2";
-            CategoriaCam2.ReadOnly = true;
-            // 
-            // ElementoCam2
-            // 
-            ElementoCam2.HeaderText = "Elemento";
-            ElementoCam2.Name = "ElementoCam2";
-            ElementoCam2.ReadOnly = true;
-            // 
-            // UnidadeMedidaCam2
-            // 
-            UnidadeMedidaCam2.HeaderText = "Unidade";
-            UnidadeMedidaCam2.Name = "UnidadeMedidaCam2";
-            UnidadeMedidaCam2.ReadOnly = true;
-            // 
-            // EsforcoCam2
-            // 
-            EsforcoCam2.HeaderText = "Esforço";
-            EsforcoCam2.Name = "EsforcoCam2";
-            EsforcoCam2.ReadOnly = true;
-            // 
-            // CategoriaCam1
-            // 
-            CategoriaCam1.HeaderText = "Categoria";
-            CategoriaCam1.Name = "CategoriaCam1";
-            CategoriaCam1.ReadOnly = true;
-            // 
-            // ElementoCam1
-            // 
-            ElementoCam1.HeaderText = "Elemento";
-            ElementoCam1.Name = "ElementoCam1";
-            ElementoCam1.ReadOnly = true;
-            // 
-            // UnidadeMedidaCam1
-            // 
-            UnidadeMedidaCam1.HeaderText = "Unidade";
-            UnidadeMedidaCam1.Name = "UnidadeMedidaCam1";
-            UnidadeMedidaCam1.ReadOnly = true;
-            // 
-            // EsforcoCam1
-            // 
-            EsforcoCam1.HeaderText = "Esforço";
-            EsforcoCam1.Name = "EsforcoCam1";
-            EsforcoCam1.ReadOnly = true;
-            // 
-            // CategoriaCam3
-            // 
-            CategoriaCam3.HeaderText = "Categoria";
-            CategoriaCam3.Name = "CategoriaCam3";
-            CategoriaCam3.ReadOnly = true;
-            // 
-            // ElementoCam3
-            // 
-            ElementoCam3.HeaderText = "Elemento";
-            ElementoCam3.Name = "ElementoCam3";
-            ElementoCam3.ReadOnly = true;
-            // 
-            // UnidadeMedidaCam3
-            // 
-            UnidadeMedidaCam3.HeaderText = "Unidade";
-            UnidadeMedidaCam3.Name = "UnidadeMedidaCam3";
-            UnidadeMedidaCam3.ReadOnly = true;
-            // 
-            // EsforcoCam3
-            // 
-            EsforcoCam3.HeaderText = "Esforço";
-            EsforcoCam3.Name = "EsforcoCam3";
-            EsforcoCam3.ReadOnly = true;
-            // 
             // FmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -814,7 +839,6 @@
         #endregion
 
         private MenuStrip BarraMenu;
-        private ToolStripMenuItem aJUDAToolStripMenuItem;
         private DataGridView DgvCaminho1;
         private Label LblNumeroCaminhos;
         private Label LblCaminho1;
@@ -876,5 +900,9 @@
         private DataGridViewTextBoxColumn ElementoCam3;
         private DataGridViewTextBoxColumn UnidadeMedidaCam3;
         private DataGridViewTextBoxColumn EsforcoCam3;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem BtnEmergia;
+        private ToolStripMenuItem ObterAjudaToolStripMenuItem;
+        private ToolStripMenuItem SairToolStripMenuItem;
     }
 }

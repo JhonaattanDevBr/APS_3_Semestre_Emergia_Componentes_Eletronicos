@@ -1,4 +1,5 @@
 using Calculadora.Controller.Controles;
+using Calculadora.View.Interfaces;
 using System.Data;
 using System.Globalization;
 
@@ -266,7 +267,7 @@ namespace Calculadora.View
                 DgvCaminho2.Rows.Add(CmbCategoriaCam2.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam2.Text);
                 TxtEsforcoCam2.Clear();
             }
-            
+
         }
 
         private void BtnRemoverCam2_Click(object sender, EventArgs e)
@@ -310,8 +311,8 @@ namespace Calculadora.View
         // Metodo para calcular a emergia
         private void BtnCalculcar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TxtComponente.Text) || 
-               (DgvCaminho1.Visible == true && DgvCaminho1.Rows.Count == 0) || 
+            if (string.IsNullOrEmpty(TxtComponente.Text) ||
+               (DgvCaminho1.Visible == true && DgvCaminho1.Rows.Count == 0) ||
                (DgvCaminho2.Visible == true && DgvCaminho2.Rows.Count == 0) ||
                (DgvCaminho3.Visible == true && DgvCaminho3.Rows.Count == 0))
             {
@@ -383,6 +384,42 @@ namespace Calculadora.View
                 }
             }
             return dadosCaminho;
+        }
+
+        private void BtnLimparTudo_Click(object sender, EventArgs e)
+        {
+            TxtComponente.Clear();
+            TxtNomeCam1.Clear();
+            TxtEsforcoCam1.Clear();
+            DgvCaminho1.Rows.Clear();
+            this.RbtUm.Checked = true;
+            TxtComponente.Focus();
+        }
+
+        private void SairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult sair = MessageBox.Show("Deseja encerrar o sistema?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sair == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void BtnAjuda_Click(object sender, EventArgs e)
+        {
+            FmAjuda fmAjuda = new FmAjuda();
+            fmAjuda.ShowDialog();
+        }
+
+        private void ObterAjudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BtnAjuda_Click(sender, e);
+        }
+
+        private void BtnEmergia_Click(object sender, EventArgs e)
+        {
+            FmEmergia fmEmergia = new FmEmergia();
+            fmEmergia.ShowDialog();
         }
     }
 }
