@@ -19,5 +19,10 @@ namespace Calculadora.Model.Entidades
             ValorSej = valorSej;
             Esforco = esforco;
         }
+
+        public double CalcularEmergiaDoNo() 
+        {
+            return Esforco * ValorSej;
+        }
     }
 }

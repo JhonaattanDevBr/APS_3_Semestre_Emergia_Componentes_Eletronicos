@@ -1,5 +1,6 @@
 using Calculadora.Controller.Controles;
 using System.Data;
+using System.Globalization;
 
 namespace Calculadora.View
 {
@@ -219,10 +220,17 @@ namespace Calculadora.View
         private void BtnAdicionarCam1_Click(object sender, EventArgs e)
         {
             // preciso verificar se o nome do caminho e o esforço foi preenchido
-            string elemento = new CtlCategoria(CmbElementoCam1.SelectedItem.ToString()).PegarNomeElemento();
-            string unidadeElemento =  new CtlCategoria(CmbElementoCam1.SelectedItem.ToString()).PegarValorElemento();
-            DgvCaminho1.Rows.Add(CmbCategoriaCam1.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam1.Text);
-            TxtEsforcoCam1.Clear();
+            if (string.IsNullOrEmpty(TxtNomeCam1.Text) || string.IsNullOrEmpty(TxtEsforcoCam1.Text))
+            {
+                MessageBox.Show("Os campos nome do elemento e esforço do caminho 1 devem ser preenchidos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string elemento = new CtlCategoria(CmbElementoCam1.SelectedItem.ToString()).PegarNomeElemento();
+                string unidadeElemento = new CtlCategoria(CmbElementoCam1.SelectedItem.ToString()).PegarValorElemento();
+                DgvCaminho1.Rows.Add(CmbCategoriaCam1.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam1.Text);
+                TxtEsforcoCam1.Clear();
+            }
         }
 
         private void BtnRemoverCam1_Click(object sender, EventArgs e)
@@ -247,11 +255,18 @@ namespace Calculadora.View
         private void BtnAdicionarCam2_Click(object sender, EventArgs e)
         {
             // preciso verificar se o nome do caminho e o esforço foi preenchido
-
-            string elemento = new CtlCategoria(CmbElementoCam2.SelectedItem.ToString()).PegarNomeElemento();
-            string unidadeElemento = new CtlCategoria(CmbElementoCam2.SelectedItem.ToString()).PegarValorElemento();
-            DgvCaminho2.Rows.Add(CmbCategoriaCam2.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam2.Text);
-            TxtEsforcoCam2.Clear();
+            if (string.IsNullOrEmpty(TxtNomeCam2.Text) || string.IsNullOrEmpty(TxtEsforcoCam2.Text))
+            {
+                MessageBox.Show("Os campos nome do elemento e esforço do caminho 2 devem ser preenchidos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string elemento = new CtlCategoria(CmbElementoCam2.SelectedItem.ToString()).PegarNomeElemento();
+                string unidadeElemento = new CtlCategoria(CmbElementoCam2.SelectedItem.ToString()).PegarValorElemento();
+                DgvCaminho2.Rows.Add(CmbCategoriaCam2.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam2.Text);
+                TxtEsforcoCam2.Clear();
+            }
+            
         }
 
         private void BtnRemoverCam2_Click(object sender, EventArgs e)
@@ -273,11 +288,17 @@ namespace Calculadora.View
         private void BtnAdicionarCam3_Click(object sender, EventArgs e)
         {
             // preciso verificar se o nome do caminho e o esforço foi preenchido
-
-            string elemento = new CtlCategoria(CmbElementoCam3.SelectedItem.ToString()).PegarNomeElemento();
-            string unidadeElemento = new CtlCategoria(CmbElementoCam3.SelectedItem.ToString()).PegarValorElemento();
-            DgvCaminho3.Rows.Add(CmbCategoriaCam2.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam3.Text);
-            TxtEsforcoCam3.Clear();
+            if (string.IsNullOrEmpty(TxtNomeCam3.Text) || string.IsNullOrEmpty(TxtEsforcoCam3.Text))
+            {
+                MessageBox.Show("Os campos nome do elemento e esforço do caminho 3 devem ser preenchidos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string elemento = new CtlCategoria(CmbElementoCam3.SelectedItem.ToString()).PegarNomeElemento();
+                string unidadeElemento = new CtlCategoria(CmbElementoCam3.SelectedItem.ToString()).PegarValorElemento();
+                DgvCaminho3.Rows.Add(CmbCategoriaCam2.SelectedItem, elemento, unidadeElemento, TxtEsforcoCam3.Text);
+                TxtEsforcoCam3.Clear();
+            }
         }
 
         private void BtnRemoverCam3_Click(object sender, EventArgs e)
@@ -289,27 +310,59 @@ namespace Calculadora.View
         // Metodo para calcular a emergia
         private void BtnCalculcar_Click(object sender, EventArgs e)
         {
-            List<string[]> dadosCaminh01 = new List<string[]>();
-            dadosCaminh01 = this.PegarDadosCaminho(DgvCaminho1);
-
-            if (RbtDois.Checked)
+            if (string.IsNullOrEmpty(TxtComponente.Text) || 
+               (DgvCaminho1.Visible == true && DgvCaminho1.Rows.Count == 0) || 
+               (DgvCaminho2.Visible == true && DgvCaminho2.Rows.Count == 0) ||
+               (DgvCaminho3.Visible == true && DgvCaminho3.Rows.Count == 0))
             {
-                List<string[]> dadosCaminh02 = new List<string[]>();
-                dadosCaminh02 = this.PegarDadosCaminho(DgvCaminho2);
-            }
-            else if (RbtTres.Checked)
-            {
-                List<string[]> dadosCaminh02 = new List<string[]>();
-                dadosCaminh02 = this.PegarDadosCaminho(DgvCaminho2);
-                List<string[]> dadosCaminh03 = new List<string[]>();
-                dadosCaminh03 = this.PegarDadosCaminho(DgvCaminho3);
+                MessageBox.Show("Para calcular é necessario informar o nome do componente a ser calculado e adicionar elementos as tabelas.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtComponente.Focus();
             }
             else
             {
-
+                if (RbtDois.Checked)
+                {
+                    List<string[]> dadosCaminh01 = new List<string[]>();
+                    dadosCaminh01 = this.PegarDadosCaminho(DgvCaminho1);
+                    List<string[]> dadosCaminh02 = new List<string[]>();
+                    dadosCaminh02 = this.PegarDadosCaminho(DgvCaminho2);
+                    CtlCalculo ctlCalculo = new CtlCalculo(TxtNomeCam1.Text.Trim(), TxtNomeCam2.Text.Trim(), dadosCaminh01, dadosCaminh02);
+                    double resutado = ctlCalculo.ControlarExecucaoCalculo();
+                    MessageBox.Show($"Emergia total calculada para {TxtComponente.Text.Trim()}:\n" +
+                                    $"Total em notação cietifica: {resutado.ToString("E2", CultureInfo.InvariantCulture)} seJ\n" +
+                                    $"Total em valores numericos: {resutado.ToString("N2", CultureInfo.InvariantCulture)} seJ",
+                                    "Calculo realizado com sucesso!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (RbtTres.Checked)
+                {
+                    List<string[]> dadosCaminh01 = new List<string[]>();
+                    dadosCaminh01 = this.PegarDadosCaminho(DgvCaminho1);
+                    List<string[]> dadosCaminh02 = new List<string[]>();
+                    dadosCaminh02 = this.PegarDadosCaminho(DgvCaminho2);
+                    List<string[]> dadosCaminh03 = new List<string[]>();
+                    dadosCaminh03 = this.PegarDadosCaminho(DgvCaminho3);
+                    CtlCalculo ctlCalculo = new CtlCalculo(TxtNomeCam1.Text.Trim(), TxtNomeCam2.Text.Trim(), TxtNomeCam3.Text.Trim(), dadosCaminh01, dadosCaminh02, dadosCaminh03);
+                    double resutado = ctlCalculo.ControlarExecucaoCalculo();
+                    MessageBox.Show($"Emergia total calculada para {TxtComponente.Text.Trim()}:\n" +
+                                                    $"Total em notação cietifica: {resutado.ToString("E2", CultureInfo.InvariantCulture)} seJ\n" +
+                                                    $"Total em valores numericos: {resutado.ToString("N2", CultureInfo.InvariantCulture)} seJ",
+                                                    "Calculo realizado com sucesso!",
+                                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    List<string[]> dadosCaminh01 = new List<string[]>();
+                    dadosCaminh01 = this.PegarDadosCaminho(DgvCaminho1);
+                    CtlCalculo ctlCalculo = new CtlCalculo(TxtNomeCam1.Text.Trim(), dadosCaminh01);
+                    double resutado = ctlCalculo.ControlarExecucaoCalculo();
+                    MessageBox.Show($"Emergia total calculada para {TxtComponente.Text.Trim()}:\n" +
+                                                    $"Total em notação cietifica: {resutado.ToString("E2", CultureInfo.InvariantCulture)} seJ\n" +
+                                                    $"Total em valores numericos: {resutado.ToString("N2", CultureInfo.InvariantCulture)} seJ",
+                                                    "Calculo realizado com sucesso!",
+                                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            
-
         }
 
         private List<string[]> PegarDadosCaminho(DataGridView dataGridView)
@@ -321,10 +374,10 @@ namespace Calculadora.View
                 if (!row.IsNewRow)
                 {
                     string[] valores = new string[4];
-                    valores[0] = row.Cells["CategoriaCam1"].Value.ToString();
-                    valores[1] = row.Cells["ElementoCam1"].Value.ToString();
-                    valores[2] = row.Cells["UnidadeMedidaCam1"].Value.ToString();
-                    valores[3] = row.Cells["EsforcoCam1"].Value.ToString();
+                    valores[0] = row.Cells[0].Value.ToString();
+                    valores[1] = row.Cells[1].Value.ToString();
+                    valores[2] = row.Cells[2].Value.ToString();
+                    valores[3] = row.Cells[3].Value.ToString();
 
                     dadosCaminho.Add(valores);
                 }
