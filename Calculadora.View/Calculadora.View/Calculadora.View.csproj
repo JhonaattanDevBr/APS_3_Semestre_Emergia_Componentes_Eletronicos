@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Interfaces\Imagens\Ajuda_Ciclo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Interfaces\Imagens\Ajuda_Ciclo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Calculadora.Controller\Calculadora.Controller.csproj" />
   </ItemGroup>
 
@@ -25,6 +35,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Interfaces\Imagens\Ajuda_Texto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
