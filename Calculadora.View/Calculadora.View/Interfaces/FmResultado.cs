@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Calculadora.View.Interfaces
 {
-    public partial class FmEmergia : Form
+    public partial class FmResultado: Form
     {
-        public FmEmergia()
+        public FmResultado()
         {
             InitializeComponent();
-        }
-
-        private void BtnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

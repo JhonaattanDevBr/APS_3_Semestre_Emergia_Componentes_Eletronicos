@@ -28,25 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
+            PbImagemEmergia = new PictureBox();
+            BtnFechar = new Button();
+            ((System.ComponentModel.ISupportInitialize)PbImagemEmergia).BeginInit();
             SuspendLayout();
             // 
-            // groupBox1
+            // PbImagemEmergia
             // 
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(810, 490);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            PbImagemEmergia.Image = Properties.Resources.Explicacao_Emergia;
+            PbImagemEmergia.Location = new Point(12, 12);
+            PbImagemEmergia.Name = "PbImagemEmergia";
+            PbImagemEmergia.Size = new Size(810, 490);
+            PbImagemEmergia.TabIndex = 0;
+            PbImagemEmergia.TabStop = false;
+            // 
+            // BtnFechar
+            // 
+            BtnFechar.BackColor = Color.Khaki;
+            BtnFechar.FlatStyle = FlatStyle.Flat;
+            BtnFechar.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnFechar.Location = new Point(747, 523);
+            BtnFechar.Name = "BtnFechar";
+            BtnFechar.Size = new Size(75, 30);
+            BtnFechar.TabIndex = 1;
+            BtnFechar.Text = "Fechar";
+            BtnFechar.UseVisualStyleBackColor = false;
+            BtnFechar.Click += BtnFechar_Click;
             // 
             // FmEmergia
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(834, 561);
-            Controls.Add(groupBox1);
+            Controls.Add(BtnFechar);
+            Controls.Add(PbImagemEmergia);
             Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
@@ -54,11 +70,13 @@
             Name = "FmEmergia";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Entenda o que é emergia";
+            ((System.ComponentModel.ISupportInitialize)PbImagemEmergia).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox groupBox1;
+        private PictureBox PbImagemEmergia;
+        private Button BtnFechar;
     }
 }

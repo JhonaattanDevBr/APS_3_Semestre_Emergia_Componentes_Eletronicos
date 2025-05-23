@@ -47,30 +47,35 @@
             // 
             // BtnAnterior
             // 
+            BtnAnterior.BackColor = Color.Khaki;
+            BtnAnterior.FlatStyle = FlatStyle.Popup;
             BtnAnterior.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
             BtnAnterior.Location = new Point(566, 448);
             BtnAnterior.Name = "BtnAnterior";
             BtnAnterior.Size = new Size(75, 30);
             BtnAnterior.TabIndex = 1;
             BtnAnterior.Text = "Anterior";
-            BtnAnterior.UseVisualStyleBackColor = true;
+            BtnAnterior.UseVisualStyleBackColor = false;
             BtnAnterior.Click += BtnAnterior_Click;
             // 
             // BtnProximo
             // 
+            BtnProximo.BackColor = Color.Khaki;
+            BtnProximo.FlatStyle = FlatStyle.Popup;
             BtnProximo.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
             BtnProximo.Location = new Point(647, 448);
             BtnProximo.Name = "BtnProximo";
             BtnProximo.Size = new Size(75, 30);
             BtnProximo.TabIndex = 2;
             BtnProximo.Text = "Proximo";
-            BtnProximo.UseVisualStyleBackColor = true;
+            BtnProximo.UseVisualStyleBackColor = false;
             BtnProximo.Click += BtnProximo_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(12, 453);
             label1.Name = "label1";
             label1.Size = new Size(189, 20);
@@ -81,7 +86,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(734, 487);
             Controls.Add(label1);
             Controls.Add(BtnProximo);

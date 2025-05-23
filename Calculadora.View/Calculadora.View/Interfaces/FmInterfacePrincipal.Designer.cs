@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmPrincipal));
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmPrincipal));
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             BarraMenu = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             BtnEmergia = new ToolStripMenuItem();
@@ -121,8 +123,8 @@
             // BtnEmergia
             // 
             BtnEmergia.Name = "BtnEmergia";
-            BtnEmergia.Size = new Size(156, 20);
-            BtnEmergia.Text = "Entenda o que é emergeia";
+            BtnEmergia.Size = new Size(106, 20);
+            BtnEmergia.Text = "O que é emergia";
             BtnEmergia.Click += BtnEmergia_Click;
             // 
             // ObterAjudaToolStripMenuItem
@@ -144,16 +146,26 @@
             DgvCaminho1.AllowUserToAddRows = false;
             DgvCaminho1.AllowUserToResizeRows = false;
             DgvCaminho1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCaminho1.BackgroundColor = SystemColors.ControlLight;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Khaki;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            DgvCaminho1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             DgvCaminho1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminho1.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam1, ElementoCam1, UnidadeMedidaCam1, EsforcoCam1 });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            DgvCaminho1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DgvCaminho1.DefaultCellStyle = dataGridViewCellStyle2;
+            DgvCaminho1.EnableHeadersVisualStyles = false;
             DgvCaminho1.Location = new Point(12, 67);
             DgvCaminho1.MultiSelect = false;
             DgvCaminho1.Name = "DgvCaminho1";
@@ -190,6 +202,7 @@
             // LblNumeroCaminhos
             // 
             LblNumeroCaminhos.AutoSize = true;
+            LblNumeroCaminhos.ForeColor = SystemColors.ControlText;
             LblNumeroCaminhos.Location = new Point(757, 38);
             LblNumeroCaminhos.Name = "LblNumeroCaminhos";
             LblNumeroCaminhos.Size = new Size(115, 20);
@@ -199,6 +212,7 @@
             // LblCaminho1
             // 
             LblCaminho1.AutoSize = true;
+            LblCaminho1.ForeColor = SystemColors.ControlLight;
             LblCaminho1.Location = new Point(351, 85);
             LblCaminho1.Name = "LblCaminho1";
             LblCaminho1.Size = new Size(228, 20);
@@ -208,6 +222,7 @@
             // LblCaminho2
             // 
             LblCaminho2.AutoSize = true;
+            LblCaminho2.ForeColor = SystemColors.ControlLight;
             LblCaminho2.Location = new Point(351, 252);
             LblCaminho2.Name = "LblCaminho2";
             LblCaminho2.Size = new Size(228, 20);
@@ -218,6 +233,7 @@
             // LblCaminho3
             // 
             LblCaminho3.AutoSize = true;
+            LblCaminho3.ForeColor = SystemColors.ControlLight;
             LblCaminho3.Location = new Point(351, 420);
             LblCaminho3.Name = "LblCaminho3";
             LblCaminho3.Size = new Size(228, 20);
@@ -228,6 +244,7 @@
             // LblElementoCam1
             // 
             LblElementoCam1.AutoSize = true;
+            LblElementoCam1.ForeColor = SystemColors.ControlLight;
             LblElementoCam1.Location = new Point(666, 121);
             LblElementoCam1.Name = "LblElementoCam1";
             LblElementoCam1.Size = new Size(72, 20);
@@ -236,6 +253,7 @@
             // 
             // CmbElementoCam1
             // 
+            CmbElementoCam1.BackColor = SystemColors.Info;
             CmbElementoCam1.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbElementoCam1.FormattingEnabled = true;
             CmbElementoCam1.IntegralHeight = false;
@@ -247,6 +265,7 @@
             // LblEsforcoCam1
             // 
             LblEsforcoCam1.AutoSize = true;
+            LblEsforcoCam1.ForeColor = SystemColors.ControlLight;
             LblEsforcoCam1.Location = new Point(393, 155);
             LblEsforcoCam1.Name = "LblEsforcoCam1";
             LblEsforcoCam1.Size = new Size(65, 20);
@@ -255,9 +274,10 @@
             // 
             // TxtEsforcoCam1
             // 
+            TxtEsforcoCam1.BackColor = SystemColors.ControlLight;
             TxtEsforcoCam1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtEsforcoCam1.Location = new Point(460, 152);
-            TxtEsforcoCam1.MaxLength = 3;
+            TxtEsforcoCam1.MaxLength = 2;
             TxtEsforcoCam1.Name = "TxtEsforcoCam1";
             TxtEsforcoCam1.Size = new Size(70, 26);
             TxtEsforcoCam1.TabIndex = 13;
@@ -265,29 +285,34 @@
             // 
             // BtnRemoverCam1
             // 
+            BtnRemoverCam1.BackColor = Color.Khaki;
+            BtnRemoverCam1.FlatStyle = FlatStyle.Popup;
             BtnRemoverCam1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
             BtnRemoverCam1.Location = new Point(588, 152);
             BtnRemoverCam1.Name = "BtnRemoverCam1";
             BtnRemoverCam1.Size = new Size(180, 30);
             BtnRemoverCam1.TabIndex = 14;
             BtnRemoverCam1.Text = "Remover Último Elemento";
-            BtnRemoverCam1.UseVisualStyleBackColor = true;
+            BtnRemoverCam1.UseVisualStyleBackColor = false;
             BtnRemoverCam1.Click += BtnRemoverCam1_Click;
             // 
             // BtnAdicionarCam1
             // 
+            BtnAdicionarCam1.BackColor = Color.Khaki;
+            BtnAdicionarCam1.FlatStyle = FlatStyle.Popup;
             BtnAdicionarCam1.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
             BtnAdicionarCam1.Location = new Point(794, 152);
             BtnAdicionarCam1.Name = "BtnAdicionarCam1";
             BtnAdicionarCam1.Size = new Size(150, 30);
             BtnAdicionarCam1.TabIndex = 15;
             BtnAdicionarCam1.Text = "Adicionar Elemento";
-            BtnAdicionarCam1.UseVisualStyleBackColor = true;
+            BtnAdicionarCam1.UseVisualStyleBackColor = false;
             BtnAdicionarCam1.Click += BtnAdicionarCam1_Click;
             // 
             // LblElementoCam2
             // 
             LblElementoCam2.AutoSize = true;
+            LblElementoCam2.ForeColor = SystemColors.ControlLight;
             LblElementoCam2.Location = new Point(666, 290);
             LblElementoCam2.Name = "LblElementoCam2";
             LblElementoCam2.Size = new Size(76, 20);
@@ -297,6 +322,7 @@
             // 
             // CmbElementoCam2
             // 
+            CmbElementoCam2.BackColor = SystemColors.Info;
             CmbElementoCam2.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbElementoCam2.FormattingEnabled = true;
             CmbElementoCam2.IntegralHeight = false;
@@ -309,6 +335,7 @@
             // LblEsforcoCam2
             // 
             LblEsforcoCam2.AutoSize = true;
+            LblEsforcoCam2.ForeColor = SystemColors.ControlLight;
             LblEsforcoCam2.Location = new Point(393, 322);
             LblEsforcoCam2.Name = "LblEsforcoCam2";
             LblEsforcoCam2.Size = new Size(65, 20);
@@ -318,9 +345,10 @@
             // 
             // TxtEsforcoCam2
             // 
+            TxtEsforcoCam2.BackColor = SystemColors.ControlLight;
             TxtEsforcoCam2.Font = new Font("Arial Narrow", 12F);
             TxtEsforcoCam2.Location = new Point(460, 319);
-            TxtEsforcoCam2.MaxLength = 3;
+            TxtEsforcoCam2.MaxLength = 2;
             TxtEsforcoCam2.Name = "TxtEsforcoCam2";
             TxtEsforcoCam2.Size = new Size(70, 26);
             TxtEsforcoCam2.TabIndex = 19;
@@ -329,29 +357,34 @@
             // 
             // BtnRemoverCam2
             // 
+            BtnRemoverCam2.BackColor = Color.Khaki;
+            BtnRemoverCam2.FlatStyle = FlatStyle.Popup;
             BtnRemoverCam2.Location = new Point(588, 321);
             BtnRemoverCam2.Name = "BtnRemoverCam2";
             BtnRemoverCam2.Size = new Size(180, 30);
             BtnRemoverCam2.TabIndex = 20;
             BtnRemoverCam2.Text = "Remover Último Elemento";
-            BtnRemoverCam2.UseVisualStyleBackColor = true;
+            BtnRemoverCam2.UseVisualStyleBackColor = false;
             BtnRemoverCam2.Visible = false;
             BtnRemoverCam2.Click += BtnRemoverCam2_Click;
             // 
             // BtnAdicionarCam2
             // 
+            BtnAdicionarCam2.BackColor = Color.Khaki;
+            BtnAdicionarCam2.FlatStyle = FlatStyle.Popup;
             BtnAdicionarCam2.Location = new Point(794, 321);
             BtnAdicionarCam2.Name = "BtnAdicionarCam2";
             BtnAdicionarCam2.Size = new Size(150, 30);
             BtnAdicionarCam2.TabIndex = 21;
             BtnAdicionarCam2.Text = "Adicionar Elemento";
-            BtnAdicionarCam2.UseVisualStyleBackColor = true;
+            BtnAdicionarCam2.UseVisualStyleBackColor = false;
             BtnAdicionarCam2.Visible = false;
             BtnAdicionarCam2.Click += BtnAdicionarCam2_Click;
             // 
             // LblElementoCam3
             // 
             LblElementoCam3.AutoSize = true;
+            LblElementoCam3.ForeColor = SystemColors.ControlLight;
             LblElementoCam3.Location = new Point(666, 456);
             LblElementoCam3.Name = "LblElementoCam3";
             LblElementoCam3.Size = new Size(76, 20);
@@ -362,6 +395,7 @@
             // LblEsforcoCam3
             // 
             LblEsforcoCam3.AutoSize = true;
+            LblEsforcoCam3.ForeColor = SystemColors.ControlLight;
             LblEsforcoCam3.Location = new Point(393, 487);
             LblEsforcoCam3.Name = "LblEsforcoCam3";
             LblEsforcoCam3.Size = new Size(65, 20);
@@ -371,6 +405,7 @@
             // 
             // CmbElementoCam3
             // 
+            CmbElementoCam3.BackColor = SystemColors.Info;
             CmbElementoCam3.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbElementoCam3.FormattingEnabled = true;
             CmbElementoCam3.IntegralHeight = false;
@@ -382,9 +417,10 @@
             // 
             // TxtEsforcoCam3
             // 
+            TxtEsforcoCam3.BackColor = SystemColors.ControlLight;
             TxtEsforcoCam3.Font = new Font("Arial Narrow", 12F);
             TxtEsforcoCam3.Location = new Point(460, 487);
-            TxtEsforcoCam3.MaxLength = 3;
+            TxtEsforcoCam3.MaxLength = 2;
             TxtEsforcoCam3.Name = "TxtEsforcoCam3";
             TxtEsforcoCam3.Size = new Size(70, 26);
             TxtEsforcoCam3.TabIndex = 25;
@@ -393,29 +429,34 @@
             // 
             // BtnRemoverCam3
             // 
+            BtnRemoverCam3.BackColor = Color.Khaki;
+            BtnRemoverCam3.FlatStyle = FlatStyle.Popup;
             BtnRemoverCam3.Location = new Point(588, 487);
             BtnRemoverCam3.Name = "BtnRemoverCam3";
             BtnRemoverCam3.Size = new Size(180, 30);
             BtnRemoverCam3.TabIndex = 26;
             BtnRemoverCam3.Text = "Remover Último Elemento";
-            BtnRemoverCam3.UseVisualStyleBackColor = true;
+            BtnRemoverCam3.UseVisualStyleBackColor = false;
             BtnRemoverCam3.Visible = false;
             BtnRemoverCam3.Click += BtnRemoverCam3_Click;
             // 
             // BtnAdicionarCam3
             // 
+            BtnAdicionarCam3.BackColor = Color.Khaki;
+            BtnAdicionarCam3.FlatStyle = FlatStyle.Popup;
             BtnAdicionarCam3.Location = new Point(794, 487);
             BtnAdicionarCam3.Name = "BtnAdicionarCam3";
             BtnAdicionarCam3.Size = new Size(150, 30);
             BtnAdicionarCam3.TabIndex = 27;
             BtnAdicionarCam3.Text = "Adicionar Elemento";
-            BtnAdicionarCam3.UseVisualStyleBackColor = true;
+            BtnAdicionarCam3.UseVisualStyleBackColor = false;
             BtnAdicionarCam3.Visible = false;
             BtnAdicionarCam3.Click += BtnAdicionarCam3_Click;
             // 
             // LblComponente
             // 
             LblComponente.AutoSize = true;
+            LblComponente.ForeColor = SystemColors.ControlText;
             LblComponente.Location = new Point(351, 38);
             LblComponente.Name = "LblComponente";
             LblComponente.Size = new Size(194, 20);
@@ -424,6 +465,7 @@
             // 
             // TxtComponente
             // 
+            TxtComponente.BackColor = SystemColors.ControlLight;
             TxtComponente.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtComponente.Location = new Point(551, 37);
             TxtComponente.MaxLength = 30;
@@ -434,27 +476,32 @@
             // 
             // BtnLimparTudo
             // 
+            BtnLimparTudo.BackColor = Color.Khaki;
+            BtnLimparTudo.FlatStyle = FlatStyle.Popup;
             BtnLimparTudo.Location = new Point(462, 549);
             BtnLimparTudo.Name = "BtnLimparTudo";
             BtnLimparTudo.Size = new Size(100, 30);
             BtnLimparTudo.TabIndex = 42;
             BtnLimparTudo.Text = "Limpar Tudo";
-            BtnLimparTudo.UseVisualStyleBackColor = true;
+            BtnLimparTudo.UseVisualStyleBackColor = false;
             BtnLimparTudo.Click += BtnLimparTudo_Click;
             // 
             // BtnCalculcar
             // 
+            BtnCalculcar.BackColor = Color.Khaki;
+            BtnCalculcar.FlatStyle = FlatStyle.Popup;
             BtnCalculcar.Location = new Point(588, 549);
             BtnCalculcar.Name = "BtnCalculcar";
             BtnCalculcar.Size = new Size(80, 30);
             BtnCalculcar.TabIndex = 43;
             BtnCalculcar.Text = "Calcular";
-            BtnCalculcar.UseVisualStyleBackColor = true;
+            BtnCalculcar.UseVisualStyleBackColor = false;
             BtnCalculcar.Click += BtnCalculcar_Click;
             // 
             // LblCategoriaCam1
             // 
             LblCategoriaCam1.AutoSize = true;
+            LblCategoriaCam1.ForeColor = SystemColors.ControlLight;
             LblCategoriaCam1.Location = new Point(382, 121);
             LblCategoriaCam1.Name = "LblCategoriaCam1";
             LblCategoriaCam1.Size = new Size(76, 20);
@@ -463,6 +510,7 @@
             // 
             // CmbCategoriaCam1
             // 
+            CmbCategoriaCam1.BackColor = SystemColors.Info;
             CmbCategoriaCam1.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCategoriaCam1.FormattingEnabled = true;
             CmbCategoriaCam1.Items.AddRange(new object[] { "Componentes", "Materias Primas", "Processos", "Produtos" });
@@ -475,6 +523,7 @@
             // LblCategoriaCam2
             // 
             LblCategoriaCam2.AutoSize = true;
+            LblCategoriaCam2.ForeColor = SystemColors.ControlLight;
             LblCategoriaCam2.Location = new Point(382, 290);
             LblCategoriaCam2.Name = "LblCategoriaCam2";
             LblCategoriaCam2.Size = new Size(76, 20);
@@ -485,6 +534,7 @@
             // LblCategoriaCam3
             // 
             LblCategoriaCam3.AutoSize = true;
+            LblCategoriaCam3.ForeColor = SystemColors.ControlLight;
             LblCategoriaCam3.Location = new Point(382, 456);
             LblCategoriaCam3.Name = "LblCategoriaCam3";
             LblCategoriaCam3.Size = new Size(76, 20);
@@ -494,6 +544,7 @@
             // 
             // CmbCategoriaCam2
             // 
+            CmbCategoriaCam2.BackColor = SystemColors.Info;
             CmbCategoriaCam2.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCategoriaCam2.FormattingEnabled = true;
             CmbCategoriaCam2.Items.AddRange(new object[] { "Componentes", "Materias Primas", "Processos", "Produtos" });
@@ -506,6 +557,7 @@
             // 
             // CmbCategoriaCam3
             // 
+            CmbCategoriaCam3.BackColor = SystemColors.Info;
             CmbCategoriaCam3.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbCategoriaCam3.FormattingEnabled = true;
             CmbCategoriaCam3.Items.AddRange(new object[] { "Componentes", "Materias Primas", "Processos", "Produtos" });
@@ -533,6 +585,7 @@
             // 
             LblMsgAjuda.AutoSize = true;
             LblMsgAjuda.Font = new Font("Arial Narrow", 10F, FontStyle.Bold);
+            LblMsgAjuda.ForeColor = SystemColors.Desktop;
             LblMsgAjuda.Location = new Point(1062, 75);
             LblMsgAjuda.Name = "LblMsgAjuda";
             LblMsgAjuda.Size = new Size(40, 17);
@@ -579,16 +632,26 @@
             DgvCaminho2.AllowUserToAddRows = false;
             DgvCaminho2.AllowUserToResizeRows = false;
             DgvCaminho2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCaminho2.BackgroundColor = SystemColors.ControlLight;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Khaki;
+            dataGridViewCellStyle3.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            DgvCaminho2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             DgvCaminho2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminho2.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam2, ElementoCam2, UnidadeMedidaCam2, EsforcoCam2 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DgvCaminho2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            DgvCaminho2.DefaultCellStyle = dataGridViewCellStyle4;
+            DgvCaminho2.EnableHeadersVisualStyles = false;
             DgvCaminho2.Location = new Point(12, 234);
             DgvCaminho2.Name = "DgvCaminho2";
             DgvCaminho2.ReadOnly = true;
@@ -627,16 +690,19 @@
             DgvCaminho3.AllowUserToAddRows = false;
             DgvCaminho3.AllowUserToResizeRows = false;
             DgvCaminho3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCaminho3.BackgroundColor = SystemColors.ControlLight;
+            DgvCaminho3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             DgvCaminho3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCaminho3.Columns.AddRange(new DataGridViewColumn[] { CategoriaCam3, ElementoCam3, UnidadeMedidaCam3, EsforcoCam3 });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DgvCaminho3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            DgvCaminho3.DefaultCellStyle = dataGridViewCellStyle5;
+            DgvCaminho3.EnableHeadersVisualStyles = false;
             DgvCaminho3.Location = new Point(12, 402);
             DgvCaminho3.Name = "DgvCaminho3";
             DgvCaminho3.ReadOnly = true;
@@ -701,6 +767,7 @@
             // 
             // TxtNomeCam1
             // 
+            TxtNomeCam1.BackColor = SystemColors.ControlLight;
             TxtNomeCam1.CharacterCasing = CharacterCasing.Lower;
             TxtNomeCam1.Font = new Font("Arial Narrow", 12F);
             TxtNomeCam1.Location = new Point(585, 82);
@@ -713,6 +780,7 @@
             // 
             // TxtNomeCam2
             // 
+            TxtNomeCam2.BackColor = SystemColors.ControlLight;
             TxtNomeCam2.CharacterCasing = CharacterCasing.Lower;
             TxtNomeCam2.Font = new Font("Arial Narrow", 12F);
             TxtNomeCam2.Location = new Point(585, 249);
@@ -726,6 +794,7 @@
             // 
             // TxtNomeCam3
             // 
+            TxtNomeCam3.BackColor = SystemColors.ControlLight;
             TxtNomeCam3.CharacterCasing = CharacterCasing.Lower;
             TxtNomeCam3.Font = new Font("Arial Narrow", 12F);
             TxtNomeCam3.Location = new Point(585, 417);
@@ -767,7 +836,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1114, 591);
             Controls.Add(LblNomeCam3);
             Controls.Add(LblNomeCam2);
