@@ -9,9 +9,6 @@ namespace Calculadora.Controller.Controles
 {
     public class CtlCalculo
     {
-        
-        
-
         public string NomeCaminho1 { get; set; }
         public List<string[]> Caminho1 { get; set; }
 
@@ -21,6 +18,8 @@ namespace Calculadora.Controller.Controles
         public string NomeCaminho3 { get; set; }
         public List<string[]> Caminho3 { get; set; }
 
+        public double ValorTotalEmergia { get; set; }
+        public List<List<string>> ElementosTabela { get; set; } = new List<List<string>>();
 
         public CtlCalculo(string nomeCaminho1, List<string[]> caminho1)
         {
@@ -52,7 +51,11 @@ namespace Calculadora.Controller.Controles
                 calculadoraEmergia.AdicionarCaminho(caminho1);
                 calculadoraEmergia.AdicionarCaminho(caminho2);
                 calculadoraEmergia.AdicionarCaminho(caminho3);
-                return calculadoraEmergia.CalcularValorTotalCaminho();
+                this.PegarElementosTabela(Caminho1);
+                this.PegarElementosTabela(Caminho2);
+                this.PegarElementosTabela(Caminho3);
+                ValorTotalEmergia = calculadoraEmergia.CalcularValorTotalCaminho();
+                return ValorTotalEmergia;
             }
             else if (NomeCaminho2 != null)
             {
@@ -61,14 +64,19 @@ namespace Calculadora.Controller.Controles
                 CalculadoraEmergia calculadoraEmergia = new CalculadoraEmergia();
                 calculadoraEmergia.AdicionarCaminho(caminho1);
                 calculadoraEmergia.AdicionarCaminho(caminho2);
-                return calculadoraEmergia.CalcularValorTotalCaminho();
+                this.PegarElementosTabela(Caminho1);
+                this.PegarElementosTabela(Caminho2);
+                ValorTotalEmergia = calculadoraEmergia.CalcularValorTotalCaminho();
+                return ValorTotalEmergia;
             }
             else
             {
                 Caminho caminho1 = CriarCaminho(Caminho1);
                 CalculadoraEmergia calculadoraEmergia = new CalculadoraEmergia();
                 calculadoraEmergia.AdicionarCaminho(caminho1);
-                return calculadoraEmergia.CalcularValorTotalCaminho();
+                this.PegarElementosTabela(Caminho1);
+                ValorTotalEmergia = calculadoraEmergia.CalcularValorTotalCaminho();
+                return ValorTotalEmergia;
             }
         }
 
@@ -85,6 +93,28 @@ namespace Calculadora.Controller.Controles
                 cam.AdicionarNo(no);
             }
             return cam;
+        }
+
+        private void PegarElementosTabela(List<string[]> caminho)
+        {
+            foreach (var c in caminho)
+            {
+                List<string> dadosTabela = new List<string>();
+                for (int i = 0; i < 1; i++)
+                {
+                    dadosTabela.Add(c[0]);
+                    dadosTabela.Add(c[1]);
+                    dadosTabela.Add(c[2]);
+                    dadosTabela.Add(c[3]);
+                    ElementosTabela.Add(dadosTabela);
+                }
+            }
+        }
+
+        public void CriarRelatorio(string nomeElemento)
+        {
+            string documentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            Relatorio.CriarTabelaEmPdf(nomeElemento, ValorTotalEmergia, documentos + $"\\{nomeElemento}.pdf", ElementosTabela);
         }
 
     }

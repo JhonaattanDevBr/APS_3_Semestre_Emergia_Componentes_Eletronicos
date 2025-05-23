@@ -329,11 +329,8 @@ namespace Calculadora.View
                     dadosCaminh02 = this.PegarDadosCaminho(DgvCaminho2);
                     CtlCalculo ctlCalculo = new CtlCalculo(TxtNomeCam1.Text.Trim(), TxtNomeCam2.Text.Trim(), dadosCaminh01, dadosCaminh02);
                     double resutado = ctlCalculo.ControlarExecucaoCalculo();
-                    MessageBox.Show($"Emergia total calculada para {TxtComponente.Text.Trim()}:\n" +
-                                    $"Total em notação cietifica: {resutado.ToString("E2", CultureInfo.InvariantCulture)} seJ\n" +
-                                    $"Total em valores numericos: {resutado.ToString("N2", CultureInfo.InvariantCulture)} seJ",
-                                    "Calculo realizado com sucesso!",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FmResultado fmResultado = new FmResultado(TxtComponente.Text.Trim(), resutado, ctlCalculo);
+                    fmResultado.ShowDialog();
                 }
                 else if (RbtTres.Checked)
                 {
@@ -345,11 +342,8 @@ namespace Calculadora.View
                     dadosCaminh03 = this.PegarDadosCaminho(DgvCaminho3);
                     CtlCalculo ctlCalculo = new CtlCalculo(TxtNomeCam1.Text.Trim(), TxtNomeCam2.Text.Trim(), TxtNomeCam3.Text.Trim(), dadosCaminh01, dadosCaminh02, dadosCaminh03);
                     double resutado = ctlCalculo.ControlarExecucaoCalculo();
-                    MessageBox.Show($"Emergia total calculada para {TxtComponente.Text.Trim()}:\n" +
-                                                    $"Total em notação cietifica: {resutado.ToString("E2", CultureInfo.InvariantCulture)} seJ\n" +
-                                                    $"Total em valores numericos: {resutado.ToString("N2", CultureInfo.InvariantCulture)} seJ",
-                                                    "Calculo realizado com sucesso!",
-                                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FmResultado fmResultado = new FmResultado(TxtComponente.Text.Trim(), resutado, ctlCalculo);
+                    fmResultado.ShowDialog();
                 }
                 else
                 {
@@ -357,15 +351,14 @@ namespace Calculadora.View
                     dadosCaminh01 = this.PegarDadosCaminho(DgvCaminho1);
                     CtlCalculo ctlCalculo = new CtlCalculo(TxtNomeCam1.Text.Trim(), dadosCaminh01);
                     double resutado = ctlCalculo.ControlarExecucaoCalculo();
-                    MessageBox.Show($"Emergia total calculada para {TxtComponente.Text.Trim()}:\n" +
-                                                    $"Total em notação cietifica: {resutado.ToString("E2", CultureInfo.InvariantCulture)} seJ\n" +
-                                                    $"Total em valores numericos: {resutado.ToString("N2", CultureInfo.InvariantCulture)} seJ",
-                                                    "Calculo realizado com sucesso!",
-                                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FmResultado fmResultado = new FmResultado(TxtComponente.Text.Trim(), resutado, ctlCalculo);
+                    fmResultado.ShowDialog();
                 }
             }
         }
 
+
+        // Metodo para pegar os dados das tabelas na interface
         private List<string[]> PegarDadosCaminho(DataGridView dataGridView)
         {
             List<string[]> dadosCaminho = new List<string[]>();
@@ -386,6 +379,8 @@ namespace Calculadora.View
             return dadosCaminho;
         }
 
+
+        // Metodo para limpar todos os componentes da interface
         private void BtnLimparTudo_Click(object sender, EventArgs e)
         {
             TxtComponente.Clear();
@@ -396,6 +391,8 @@ namespace Calculadora.View
             TxtComponente.Focus();
         }
 
+
+        // Metodo para sair do sistema
         private void SairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult sair = MessageBox.Show("Deseja encerrar o sistema?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -405,17 +402,21 @@ namespace Calculadora.View
             }
         }
 
+        // Metodo para acessar a interface de ajuda pela interface
         private void BtnAjuda_Click(object sender, EventArgs e)
         {
             FmAjuda fmAjuda = new FmAjuda();
             fmAjuda.ShowDialog();
         }
 
+
+        // Metodo para acessar a interface de ajuda pela barra de menu
         private void ObterAjudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.BtnAjuda_Click(sender, e);
         }
 
+        // Metodo para acessar a interface de o que é emergia pela barra de menu
         private void BtnEmergia_Click(object sender, EventArgs e)
         {
             FmEmergia fmEmergia = new FmEmergia();
